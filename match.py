@@ -1,36 +1,27 @@
+# ========== DOXYGEN ==========
+## @file match.py
+## @author Jeff Podolski
+
+from player import Player
+
+## The Match class is designed to be a basic class that holds essential information about a set.
+# it contains information on the players in the match in the form of four Player objects, labeled 1-4
+# note that regardless of the notation in the code, any player can be assigned to any port. Players are accessed
+# by accessor functions, for example (what_team = winners_semis.p1.get_team())
 class Match:
-#	singles = 1
-#	length = 3
-	playerA = 'Player A'
-	playerB = 'Player B'
-	playerC = 'Player C'
-	playerD = 'Player D'
-	pAport = 1
-	pBport = 2
-	pCport = 3
-	pDport = 4
-#	pATeam = 0
-#	pBTeam = 0
-#	pCTeam = 1
-#	pDTeam = 1
 	def __init__(self):
-		self.pAport = 1
-		self.pBport = 2
-		self.pCport = 3
-		self.pDport = 4
+		self.p1 = Player()
+		self.p2 = Player()
+		self.p3 = Player()
+		self.p4 = Player()
+		self.__bestOf = 3
+		self.__singles = 1
+		self.__round = "Friendlies"
+	def is_singles(self):
+		return (self.__singles == 1)
+	def get_best_of(self):
+		return(self.__bestOf)
+	def get_set_round(self, roundString):
+		self.__round = roundString
 
-	def print_ports(self):
-		print(self.pAport)
-		print(self.pBport)
-	def set_ports(self, a=0, b=0, c=0, d=0):
-		self.pAport = a
-		self.pBport = b
-		self.pCport = c
-		self.pDport = d
-	def set_tagA(self, name_A):
-		self.playerA = name_A
-	def set_tagB(self, name_B):
-		self.platerB = name_B
 
-def print_hey():
-	print("HEY")

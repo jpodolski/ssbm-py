@@ -1,37 +1,13 @@
-def new_match():
-	match = {
-		'singles': 1,
-		'set-len': 3,
-		
-		'player-a': 'Player A',
-		'player-b': 'Player B',
-		'player-c': 'Player C',
-		'player-d': 'Player D',
-		
-		'pA-port': 1,
-		'pB-port': 2,
-		'pC-port': 3,
-		'pD-port': 4,
-		
-		'pA-team': 0,
-		'pB-team': 0,
-		'pC-team': 1,
-		'pD-team': 1}
-	return match
+from tkinter import *
+from match import Match
+from PIL import Image, ImageTk
 
-def print_ports(match):
-	print(match['pA-port'])
-	print(match['pB-port'])
-	print(match['pC-port'])
-	print(match['pD-port'])
-
-my_match = new_match()
-
-my_match['pC-port'] = 2
-my_match['pA-port'] = 3
-my_match['pD-port'] = 1
-my_match['pB-port'] = 4
-
-print_ports(my_match)
-
-
+def gen_char_filename(match, player):
+	if(player == 1):
+		return ("media/stock/" + str(character_names.index(pA_char.get())) + "_" + str(match.p1.get_sub_color()) + ".png")
+	if(player == 2):
+		return ("media/stock/" + str(character_names.index(pB_char.get())) + "_" + str(match.p2.get_sub_color()) + ".png")
+	if(player == 3):
+		return ("media/stock/" + str(character_names.index(pC_char.get())) + "_" + str(match.p3.get_sub_color()) + ".png")
+	if(player == 4):
+		return ("media/stock/" + str(character_names.index(pD_char.get())) + "_" + str(match.p4.get_sub_color()) + ".png")

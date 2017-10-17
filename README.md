@@ -6,7 +6,9 @@ Project Goals:
 	- Use challonge.com's API to link challonge matches to Match objects
 	- Provide a suite of misc. tools to interact with OBS though plugins/files
 
-Development is ongoing and likely unstable. This repo is primarily for my personal use and organization
+Development is ongoing and likely unstable until further notice. This repo is primarily for my personal use and organization
+
+
 
 TO DO:
 	- Create Match class

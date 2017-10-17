@@ -1,0 +1,68 @@
+\hypertarget{gui_8py}{}\section{gui.\+py File Reference}
+\label{gui_8py}\index{gui.\+py@{gui.\+py}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{gui_8py_af7c90dbeb2c97801a3ff9c6c51dcc273}\label{gui_8py_af7c90dbeb2c97801a3ff9c6c51dcc273}} 
+def {\bfseries ssbm-\/py.\+gui.\+update} (match)
+\item 
+\mbox{\Hypertarget{gui_8py_aa0ccf6a0cc3f2baf0dd8e5e568674f5d}\label{gui_8py_aa0ccf6a0cc3f2baf0dd8e5e568674f5d}} 
+def {\bfseries ssbm-\/py.\+gui.\+update\+\_\+characters} (match)
+\item 
+\mbox{\Hypertarget{gui_8py_a50fc38dde338f2856b6a608d44fd1de5}\label{gui_8py_a50fc38dde338f2856b6a608d44fd1de5}} 
+def {\bfseries ssbm-\/py.\+gui.\+select\+\_\+char} (index, match, player)
+\item 
+\mbox{\Hypertarget{gui_8py_a5215e56203fe2fa6a2bab9c3c37b7e8e}\label{gui_8py_a5215e56203fe2fa6a2bab9c3c37b7e8e}} 
+def {\bfseries ssbm-\/py.\+gui.\+inc\+\_\+color} (match, player, amt)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{gui_8py_aaf21d56a79e44c75ee894a0a6ed8d7ff}\label{gui_8py_aaf21d56a79e44c75ee894a0a6ed8d7ff}} 
+{\bfseries ssbm-\/py.\+gui.\+top} = Tk()
+\item 
+\mbox{\Hypertarget{gui_8py_aeba22a4a8e155f08a33a3799589f2d8c}\label{gui_8py_aeba22a4a8e155f08a33a3799589f2d8c}} 
+{\bfseries ssbm-\/py.\+gui.\+current\+\_\+match} = Match()
+\item 
+\mbox{\Hypertarget{gui_8py_afeb7bd11e520210113c84b9282e81806}\label{gui_8py_afeb7bd11e520210113c84b9282e81806}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char} = String\+Var(top)
+\item 
+\mbox{\Hypertarget{gui_8py_abc35fefb5b3b8fa81a97d80ca0ebe7ee}\label{gui_8py_abc35fefb5b3b8fa81a97d80ca0ebe7ee}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tag\+\_\+label} = Label(top, text=\char`\"{}P1 Tag\+:\char`\"{})
+\item 
+\mbox{\Hypertarget{gui_8py_abeb73753e44d101edb5068a2046f95ea}\label{gui_8py_abeb73753e44d101edb5068a2046f95ea}} 
+{\bfseries ssbm-\/py.\+gui.\+row}
+\item 
+\mbox{\Hypertarget{gui_8py_a7b34bcfb04341c13eeaa70f9c090fe75}\label{gui_8py_a7b34bcfb04341c13eeaa70f9c090fe75}} 
+{\bfseries ssbm-\/py.\+gui.\+column}
+\item 
+\mbox{\Hypertarget{gui_8py_a9c079dcd65bdb867668a345bbd1928dd}\label{gui_8py_a9c079dcd65bdb867668a345bbd1928dd}} 
+{\bfseries ssbm-\/py.\+gui.\+sticky}
+\item 
+\mbox{\Hypertarget{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}\label{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tag} = Entry(top, bd = 1)
+\item 
+\mbox{\Hypertarget{gui_8py_a79241378c21696c0372f000f3216907a}\label{gui_8py_a79241378c21696c0372f000f3216907a}} 
+{\bfseries ssbm-\/py.\+gui.\+columnspan}
+\item 
+\mbox{\Hypertarget{gui_8py_a0c3c538e517359580574d7056250e5c9}\label{gui_8py_a0c3c538e517359580574d7056250e5c9}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char\+\_\+dropdown} = Option\+Menu(top, p1\+\_\+char, command = lambda \+\_\+\+: update\+\_\+characters(current\+\_\+match), $\ast$character\+\_\+names)
+\item 
+\mbox{\Hypertarget{gui_8py_a41791e24c87e75f7068eb8514b924743}\label{gui_8py_a41791e24c87e75f7068eb8514b924743}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char\+\_\+prevcolor} = Button(top, text = \char`\"{}$<$\char`\"{}, command = lambda\+: inc\+\_\+color(current\+\_\+match, 1, -\/1))
+\item 
+\mbox{\Hypertarget{gui_8py_a12b2956cea1641919400a0e8068e55f5}\label{gui_8py_a12b2956cea1641919400a0e8068e55f5}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+img} = Image.\+open(\char`\"{}media/stock/26\+\_\+0.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{gui_8py_a66e427003e5f8197d61b3aa21811b98a}\label{gui_8py_a66e427003e5f8197d61b3aa21811b98a}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tkimg} = Image\+Tk.\+Photo\+Image(p1\+\_\+img)
+\item 
+\mbox{\Hypertarget{gui_8py_a405bdbc98d7122b44be4c83ed66b90b6}\label{gui_8py_a405bdbc98d7122b44be4c83ed66b90b6}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char\+\_\+icon} = Label(top, image = p1\+\_\+tkimg)
+\item 
+\mbox{\Hypertarget{gui_8py_aae94bde5ae11aba7e3b47c0d6fdb3a8f}\label{gui_8py_aae94bde5ae11aba7e3b47c0d6fdb3a8f}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char\+\_\+nextcolor} = Button(top, text = \char`\"{}$>$\char`\"{}, command = lambda\+: inc\+\_\+color(current\+\_\+match, 1, 1))
+\item 
+\mbox{\Hypertarget{gui_8py_ad3183ba3f1221a8edbcf5308c45d3b93}\label{gui_8py_ad3183ba3f1221a8edbcf5308c45d3b93}} 
+{\bfseries ssbm-\/py.\+gui.\+update\+\_\+button} = Button(top, text = \char`\"{}U\+P\+D\+A\+TE\char`\"{}, command = lambda\+: update(current\+\_\+match))
+\end{DoxyCompactItemize}
