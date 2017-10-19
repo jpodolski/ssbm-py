@@ -40,13 +40,13 @@ def update(match):
 
 def update_characters(match):
 	#TODO: Separate this from color updates
-	match.p1.set_char(p1_char.get())
+	match.player1.set_char(p1_char.get())
 	p1_img = Image.open(gen_char_filename(match, 1))
 	p1_tkimg = ImageTk.PhotoImage(p1_img)
 	p1_char_icon.configure(image = p1_tkimg)
 	p1_char_icon.image = p1_tkimg
 
-		# match.p2.set_char(pB_char.get())
+		# match.player2.set_char(pB_char.get())
 		# pB_img = Image.open(gen_char_filename(match, 2))
 		# pB_tkimg = ImageTk.PhotoImage(pB_img)
 		# pB_char_icon.configure(image = pB_tkimg)
@@ -62,27 +62,28 @@ def select_char(index, match, player):
 
 def inc_color(match, player, amt):
 	if(player == 1):
-		match.p1.set_sub_color( (match.p1.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.p1.get_char()))]) )
-		print( (match.p1.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.p1.get_char()))]))
+		p1_new_color = (match.player1.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.player1.get_char()))]) 
+		match.player1.set_sub_color( )
+		print( (match.player1.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.player1.get_char()))]))
 		p1_img = Image.open(gen_char_filename(match, 1))
 		p1_tkimg = ImageTk.PhotoImage(p1_img)
 		p1_char_icon.configure(image = p1_tkimg)
 		p1_char_icon.image = p1_tkimg
 
 	if(player == 2):
-		match.p2.set_sub_color( (match.p2.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.p2.get_char()))]))
+		match.player2.set_sub_color( (match.player2.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.player2.get_char()))]))
 		p2_img = Image.open(gen_char_filename(match, 2))
 		p2_tkimg = ImageTk.PhotoImage(p2_img)
 		p2_char_icon.configure(image = p2_tkimg)
 		p2_char_icon.image = p2_tkimg
 	if(player == 3):
-		match.p3.set_sub_color( (match.p3.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.p3.get_char()))]))
+		match.player3.set_sub_color( (match.player3.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.player3.get_char()))]))
 		p3_img = Image.open(gen_char_filename(match, 3))
 		p3_tkimg = ImageTk.PhotoImage(p3_img)
 		p3_char_icon.configure(image = p3_tkimg)
 		p3_char_icon.image = p3_tkimg
 	if(player == 4):
-		match.p3.set_sub_color( (match.p4.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.p4.get_char()))]))
+		match.player4.set_sub_color( (match.player4.get_sub_color() + amt)%(1+char_mod_table[(character_names.index(match.player4.get_char()))]))
 		p4_img = Image.open(gen_char_filename(match, 4))
 		p4_tkimg = ImageTk.PhotoImage(p4_img)
 		p4_char_icon.configure(image = p4_tkimg)

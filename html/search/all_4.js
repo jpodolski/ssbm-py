@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['player',['Player',['../classssbm-py_1_1player_1_1_player.html',1,'ssbm-py::player']]],
-  ['player_2epy',['player.py',['../player_8py.html',1,'']]]
+  ['match',['Match',['../classssbm-py_1_1match_1_1_match.html',1,'ssbm-py::match']]],
+  ['match_2epy',['match.py',['../match_8py.html',1,'']]]
 ];

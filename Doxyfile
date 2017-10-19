@@ -1,0 +1,6 @@
+
+INTERNAL_DOCS          = YES
+CLASS_DIAGRAMS         = YES
+GENERATE_TODOLIST      = YES
+WARN_IF_UNDOCUMENTED   = YES
+PROJECT_NAME           = ssbm-py

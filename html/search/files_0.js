@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_5fmanip_2epy',['file_manip.py',['../file__manip_8py.html',1,'']]]
+  ['challonge_5fimport_2epy',['challonge_import.py',['../challonge__import_8py.html',1,'']]]
 ];

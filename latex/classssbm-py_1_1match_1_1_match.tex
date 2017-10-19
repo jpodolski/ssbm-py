@@ -1,46 +1,68 @@
 \hypertarget{classssbm-py_1_1match_1_1_match}{}\section{ssbm-\/py.match.\+Match Class Reference}
 \label{classssbm-py_1_1match_1_1_match}\index{ssbm-\/py.\+match.\+Match@{ssbm-\/py.\+match.\+Match}}
-
-
-The \hyperlink{classssbm-py_1_1match_1_1_match}{Match} class is designed to be a basic class that holds essential information about a set.  
-
-
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_af9976cfb563fc57b35f8fdde1485daa7}\label{classssbm-py_1_1match_1_1_match_af9976cfb563fc57b35f8fdde1485daa7}} 
 def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a437a1c291dc23588076add106dcb787b}\label{classssbm-py_1_1match_1_1_match_a437a1c291dc23588076add106dcb787b}} 
-def {\bfseries is\+\_\+singles} (self)
+def \hyperlink{classssbm-py_1_1match_1_1_match_a437a1c291dc23588076add106dcb787b}{is\+\_\+singles} (self)
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_abc1ed5b3ce5ad859ce6f0efe4c53b0c4}\label{classssbm-py_1_1match_1_1_match_abc1ed5b3ce5ad859ce6f0efe4c53b0c4}} 
-def {\bfseries get\+\_\+best\+\_\+of} (self)
+def \hyperlink{classssbm-py_1_1match_1_1_match_abc1ed5b3ce5ad859ce6f0efe4c53b0c4}{get\+\_\+best\+\_\+of} (self)
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a18175053d9524487015791fb487c970f}\label{classssbm-py_1_1match_1_1_match_a18175053d9524487015791fb487c970f}} 
-def {\bfseries get\+\_\+set\+\_\+round} (self, round\+String)
+def \hyperlink{classssbm-py_1_1match_1_1_match_acfdd80d2f04e2d98050447d905ab368d}{get\+\_\+set\+\_\+round} (self, round\+\_\+string)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_aaaf2fedffbc05943a41d2e9b41615962}\label{classssbm-py_1_1match_1_1_match_aaaf2fedffbc05943a41d2e9b41615962}} 
-{\bfseries p1}
+\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a76110998a7c75fd7133f85b74493dcdc}\label{classssbm-py_1_1match_1_1_match_a76110998a7c75fd7133f85b74493dcdc}} 
+{\bfseries player1}
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a8eb30b0ba00718cc98fc8d92201afe76}\label{classssbm-py_1_1match_1_1_match_a8eb30b0ba00718cc98fc8d92201afe76}} 
-{\bfseries p2}
+\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a77267977bea1a5aa2138040df876ad2e}\label{classssbm-py_1_1match_1_1_match_a77267977bea1a5aa2138040df876ad2e}} 
+{\bfseries player2}
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a8b90dbe7ecd7a53e41f7b4dae732fc48}\label{classssbm-py_1_1match_1_1_match_a8b90dbe7ecd7a53e41f7b4dae732fc48}} 
-{\bfseries p3}
+\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a90b2153f1fe1138fa6727a21ef3bb22d}\label{classssbm-py_1_1match_1_1_match_a90b2153f1fe1138fa6727a21ef3bb22d}} 
+{\bfseries player3}
 \item 
-\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_aaa86023f820f2a4a211a0b54f15a5508}\label{classssbm-py_1_1match_1_1_match_aaa86023f820f2a4a211a0b54f15a5508}} 
-{\bfseries p4}
+\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a8f045691af37d9b52eeaf2b314de60f0}\label{classssbm-py_1_1match_1_1_match_a8f045691af37d9b52eeaf2b314de60f0}} 
+{\bfseries player4}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \hyperlink{classssbm-py_1_1match_1_1_match}{Match} class is designed to be a basic class that holds essential information about a set. 
+\begin{DoxyVerb}The Match class is designed to be a basic class that
+holds essential information about a set. And can be modified
+it contains information on the players in the match
+in the form of four Player objects, labeled 1-4
+note that regardless of the notation in the code,
+any player can be assigned to any port. Players are accessed
+by their respective accessor functions.
+\end{DoxyVerb}
+ 
 
-it contains information on the players in the match in the form of four Player objects, labeled 1-\/4 note that regardless of the notation in the code, any player can be assigned to any port. Players are accessed by accessor functions, for example (what\+\_\+team = winners\+\_\+semis.\+p1.\+get\+\_\+team()) 
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_abc1ed5b3ce5ad859ce6f0efe4c53b0c4}\label{classssbm-py_1_1match_1_1_match_abc1ed5b3ce5ad859ce6f0efe4c53b0c4}} 
+\index{ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}!get\+\_\+best\+\_\+of@{get\+\_\+best\+\_\+of}}
+\index{get\+\_\+best\+\_\+of@{get\+\_\+best\+\_\+of}!ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}}
+\subsubsection{\texorpdfstring{get\+\_\+best\+\_\+of()}{get\_best\_of()}}
+{\footnotesize\ttfamily def ssbm-\/py.\+match.\+Match.\+get\+\_\+best\+\_\+of (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the total number of games (e.g., Bo3 == 3)\end{DoxyVerb}
+ \mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_acfdd80d2f04e2d98050447d905ab368d}\label{classssbm-py_1_1match_1_1_match_acfdd80d2f04e2d98050447d905ab368d}} 
+\index{ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}!get\+\_\+set\+\_\+round@{get\+\_\+set\+\_\+round}}
+\index{get\+\_\+set\+\_\+round@{get\+\_\+set\+\_\+round}!ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}}
+\subsubsection{\texorpdfstring{get\+\_\+set\+\_\+round()}{get\_set\_round()}}
+{\footnotesize\ttfamily def ssbm-\/py.\+match.\+Match.\+get\+\_\+set\+\_\+round (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{round\+\_\+string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a string\end{DoxyVerb}
+ \mbox{\Hypertarget{classssbm-py_1_1match_1_1_match_a437a1c291dc23588076add106dcb787b}\label{classssbm-py_1_1match_1_1_match_a437a1c291dc23588076add106dcb787b}} 
+\index{ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}!is\+\_\+singles@{is\+\_\+singles}}
+\index{is\+\_\+singles@{is\+\_\+singles}!ssbm-\/py\+::match\+::\+Match@{ssbm-\/py\+::match\+::\+Match}}
+\subsubsection{\texorpdfstring{is\+\_\+singles()}{is\_singles()}}
+{\footnotesize\ttfamily def ssbm-\/py.\+match.\+Match.\+is\+\_\+singles (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the match is a singles match \end{DoxyVerb}
+ 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

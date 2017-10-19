@@ -27,6 +27,9 @@ def {\bfseries ssbm-\/py.\+gui.\+inc\+\_\+color} (match, player, amt)
 \mbox{\Hypertarget{gui_8py_afeb7bd11e520210113c84b9282e81806}\label{gui_8py_afeb7bd11e520210113c84b9282e81806}} 
 {\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char} = String\+Var(top)
 \item 
+\mbox{\Hypertarget{gui_8py_aa42749dad0211406f5bd2f3fbd552c05}\label{gui_8py_aa42749dad0211406f5bd2f3fbd552c05}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+port} = String\+Var(top)
+\item 
 \mbox{\Hypertarget{gui_8py_abc35fefb5b3b8fa81a97d80ca0ebe7ee}\label{gui_8py_abc35fefb5b3b8fa81a97d80ca0ebe7ee}} 
 {\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tag\+\_\+label} = Label(top, text=\char`\"{}P1 Tag\+:\char`\"{})
 \item 
@@ -39,11 +42,23 @@ def {\bfseries ssbm-\/py.\+gui.\+inc\+\_\+color} (match, player, amt)
 \mbox{\Hypertarget{gui_8py_a9c079dcd65bdb867668a345bbd1928dd}\label{gui_8py_a9c079dcd65bdb867668a345bbd1928dd}} 
 {\bfseries ssbm-\/py.\+gui.\+sticky}
 \item 
-\mbox{\Hypertarget{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}\label{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}} 
-{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tag} = Entry(top, bd = 1)
+\mbox{\Hypertarget{gui_8py_a3d792beb388740f24f74fa0fe96d7adb}\label{gui_8py_a3d792beb388740f24f74fa0fe96d7adb}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+port\+\_\+label} = Label(top, text=\char`\"{}Port\+:\char`\"{})
+\item 
+\mbox{\Hypertarget{gui_8py_a8caca6b9c61dcdc814aecc61fe44804d}\label{gui_8py_a8caca6b9c61dcdc814aecc61fe44804d}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+prefix\+\_\+label} = Label(top, text=\char`\"{}Prefix\+:\char`\"{})
 \item 
 \mbox{\Hypertarget{gui_8py_a79241378c21696c0372f000f3216907a}\label{gui_8py_a79241378c21696c0372f000f3216907a}} 
 {\bfseries ssbm-\/py.\+gui.\+columnspan}
+\item 
+\mbox{\Hypertarget{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}\label{gui_8py_a3e0336db9c1f42e3c257c660b0b70fe7}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+tag} = Entry(top, bd = 1)
+\item 
+\mbox{\Hypertarget{gui_8py_a2bb69c85637538643be84ec6a3428983}\label{gui_8py_a2bb69c85637538643be84ec6a3428983}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+prefix} = Entry(top, bd = 1)
+\item 
+\mbox{\Hypertarget{gui_8py_a1e73603ce1cfef62281118542060c50d}\label{gui_8py_a1e73603ce1cfef62281118542060c50d}} 
+{\bfseries ssbm-\/py.\+gui.\+p1\+\_\+port\+\_\+dropdown} = Option\+Menu(top, p1\+\_\+port, command = lambda \+\_\+\+: update\+\_\+characters(current\+\_\+match), $\ast$ports)
 \item 
 \mbox{\Hypertarget{gui_8py_a0c3c538e517359580574d7056250e5c9}\label{gui_8py_a0c3c538e517359580574d7056250e5c9}} 
 {\bfseries ssbm-\/py.\+gui.\+p1\+\_\+char\+\_\+dropdown} = Option\+Menu(top, p1\+\_\+char, command = lambda \+\_\+\+: update\+\_\+characters(current\+\_\+match), $\ast$character\+\_\+names)

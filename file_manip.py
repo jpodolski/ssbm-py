@@ -11,13 +11,13 @@ from utilities import *
 
 def gen_char_filename(match, player):
 	if(player == 1):
-		return ("media/stock/" + str(character_names.index(match.p1.get_char())) + "_" + str(match.p1.get_sub_color()) + ".png")
+		return ("media/stock/" + str(character_names.index(match.player1.get_char())) + "_" + str(match.player1.get_sub_color()) + ".png")
 	if(player == 2):
-		return ("media/stock/" + str(character_names.index(match.p2.get_char())) + "_" + str(match.p2.get_sub_color()) + ".png")
+		return ("media/stock/" + str(character_names.index(match.player2.get_char())) + "_" + str(match.player2.get_sub_color()) + ".png")
 	if(player == 3):
-		return ("media/stock/" + str(character_names.index(match.p3.get_char())) + "_" + str(match.p3.get_sub_color()) + ".png")
+		return ("media/stock/" + str(character_names.index(match.player3.get_char())) + "_" + str(match.player3.get_sub_color()) + ".png")
 	if(player == 4):
-		return ("media/stock/" + str(character_names.index(match.p4.get_char())) + "_" + str(match.p4.get_sub_color()) + ".png")
+		return ("media/stock/" + str(character_names.index(match.player4.get_char())) + "_" + str(match.player4.get_sub_color()) + ".png")
 
 def write_stock_icons(match):
 	stock1 = Image.open(gen_char_filename(match, 1))
