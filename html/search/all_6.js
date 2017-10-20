@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['player',['Player',['../classssbm-py_1_1player_1_1_player.html',1,'ssbm-py::player']]],
+  ['player_2epy',['player.py',['../player_8py.html',1,'']]]
 ];

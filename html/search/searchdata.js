@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "cfgimprst",
-  1: "mp",
+  0: "acfgimprst",
+  1: "amp",
   2: "cfgimp",
   3: "gis",
   4: "rt"

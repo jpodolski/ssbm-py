@@ -9,25 +9,41 @@ from match import Match
 from PIL import Image, ImageTk
 from utilities import *
 
-def gen_char_filename(match, player):
-	if(player == 1):
-		return ("media/stock/" + str(character_names.index(match.player1.get_char())) + "_" + str(match.player1.get_sub_color()) + ".png")
-	if(player == 2):
-		return ("media/stock/" + str(character_names.index(match.player2.get_char())) + "_" + str(match.player2.get_sub_color()) + ".png")
-	if(player == 3):
-		return ("media/stock/" + str(character_names.index(match.player3.get_char())) + "_" + str(match.player3.get_sub_color()) + ".png")
-	if(player == 4):
-		return ("media/stock/" + str(character_names.index(match.player4.get_char())) + "_" + str(match.player4.get_sub_color()) + ".png")
+def gen_char_filename(match, player_index):
+	player_string = "player" + str(player_index)
+	print ("media/stock/" + str(character_names.index(match.player[player_index].get_char())) + "_" + str(match.player[player_index].get_sub_color()) + ".png")
+	return ("media/stock/" + str(character_names.index(match.player[player_index].get_char())) + "_" + str(match.player[player_index].get_sub_color()) + ".png")
 
 def write_stock_icons(match):
-	stock1 = Image.open(gen_char_filename(match, 1))
-	stock1.save("OBS/p1_char.png", "PNG")
-	stock2 = Image.open(gen_char_filename(match, 2))
-	stock2.save("OBS/p2_char.png", "PNG")
-	stock3 = Image.open(gen_char_filename(match, 3))
-	stock3.save("OBS/p3_char.png", "PNG")
-	stock4 = Image.open(gen_char_filename(match, 4))
-	stock4.save("OBS/p4_char.png", "PNG")
+	for n in range (1,4):
+		stock = Image.open(gen_char_filename(match, n))
+		stock.save("OBS/p" + str(n) + "_char.png", "PNG")
+
+def write_player_tags(match):
+	for n in range (1,4):
+		file = open("OBS/p" + str(n) + "_tag", "w")
+		player_string = "player" + str(n)
+		player = getattr(match, player_string)
+		file.write(player.get_tag())
+		file.close()
+
+def write_player_prefixes(match):
+	for n in range (1,4):
+		file = open("OBS/p" + str(n) + "_prefix", "w")
+		player_string = "player" + str(n)
+		player = getattr(match, player_string)
+		file.write(player.get_prefix())
+		file.close()
+
+
+def write_team_images(match):
+	print("placeholder")
+
+def write_shit():
+	print("placeholder")
+
+def export_player_append():
+	print("placeholder")
 
 def write_team_names():
 	print("yo")

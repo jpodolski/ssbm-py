@@ -35,10 +35,10 @@ class Match:
     by their respective accessor functions.
     """
     def __init__(self):
-        self.player1 = Player()
-        self.player2 = Player()
-        self.player3 = Player()
-        self.player4 = Player()
+        self.player = []
+        for i in range (0, 4):
+            player_object = Player()
+            self.player.append(player_object)
         self.__best_of = 3
         self.__singles = 1
         self.__round = "Friendlies"

@@ -1,6 +1,6 @@
 ## @file player.py
 ## @author Jeff Podolski
-## @todo 
+## @todo
 #   - Perhaps add a hash function to give each player a unique ID
 #   - Write a create-from-json-data initializaer
 #   - Make more comprehensive (region, rank, mains, etc)
@@ -85,7 +85,3 @@ class Player:
     def get_team(self):
         """ An accessor for __team """
         return self.__team
-
-
-
-

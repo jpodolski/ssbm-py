@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['challonge_5fimport_2epy',['challonge_import.py',['../challonge__import_8py.html',1,'']]]
+  ['application',['Application',['../classssbm-py_1_1test_1_1_application.html',1,'ssbm-py::test']]]
 ];
