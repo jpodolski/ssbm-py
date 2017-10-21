@@ -1,0 +1,22 @@
+sequential switching circuits have the property that the output depends not only on the present in put but also on the past seq of inputs
+
+ineffect, these circuits must be able to remember something about the past history of the inputs
+
+
+in synchronous digital systems it is ommon practice to sync the operation of all flip flops by a common clock
+each of the flip flops has a clock input and the flip flops are memory devices that can only change output in response to a clock input, not data inputs
+a memory element that has no clock it is called a latch
+
+feedback
+	by feedback we mean that the output of 
+
+	the outputs depen only on the state of the inputs all of the times. any change in the state of one of the inputs will ripple though the circuit immediately
+
+	examples of combo logic are nand and nor gates, inverters, and buffers
+
+seq logic
+	has memory
+
+most flip flops are clocked
+
+bistable circuit

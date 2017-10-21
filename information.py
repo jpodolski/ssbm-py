@@ -1,6 +1,26 @@
-# ========== DOXYGEN ==========
 ## @file information.py
 ## @author Jeff Podolski
+## @todo
+#   - Perhaps add a hash function to give each player a unique ID
+#   - Write a create-from-json-data initializaer
+#   - Make more comprehensive (region, rank, mains, etc)
+
+# ==============================================================================
+"""
+
+INFORMATION.PY
+
+Attribution 4.0 International (CC BY 4.0)
+
+All code below is free and open source, intended to better the smash community
+You are free to copy, modify, and redistribute this code as long as credit
+is given to the original author (Jeff Podolski). Check out the source!
+
+Github Repo: http://github.com/jpodolski/ssbm-py
+Sharing License: https://creativecommons.org/licenses/by/4.0/
+
+"""
+# ==============================================================================
 
 character_names = [
 	"Fox",

@@ -1,3 +1,5 @@
+#            \\======\\  DOXYGEN //======//
+
 ## @file match.py
 ## @author Jeff Podolski
 ## @todo
@@ -7,9 +9,11 @@
 
 # ==============================================================================
 """
+             \\======\\  INFO //======//
 
-MATCH.PY
+Match.py
 
+Copyright (C) 2017 Jeff Podolski <jpodolski@protonmail.com>
 Attribution 4.0 International (CC BY 4.0)
 
 All code below is free and open source, intended to better the smash community
@@ -36,7 +40,7 @@ class Match:
     """
     def __init__(self):
         self.player = []
-        for i in range (0, 4):
+        for i in range(0, 4):
             player_object = Player()
             self.player.append(player_object)
         self.__best_of = 3

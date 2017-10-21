@@ -71,15 +71,15 @@ Functions</h2></td></tr>
 <tr class="memitem:af7c90dbeb2c97801a3ff9c6c51dcc273"><td class="memItemLeft" align="right" valign="top"><a id="af7c90dbeb2c97801a3ff9c6c51dcc273"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.update</b> (match)</td></tr>
 <tr class="separator:af7c90dbeb2c97801a3ff9c6c51dcc273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0ccf6a0cc3f2baf0dd8e5e568674f5d"><td class="memItemLeft" align="right" valign="top"><a id="aa0ccf6a0cc3f2baf0dd8e5e568674f5d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.update_characters</b> (match)</td></tr>
-<tr class="separator:aa0ccf6a0cc3f2baf0dd8e5e568674f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3460747e696e9f9485ef621d9c093821"><td class="memItemLeft" align="right" valign="top"><a id="a3460747e696e9f9485ef621d9c093821"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.update_character</b> (match, player_index)</td></tr>
+<tr class="separator:a3460747e696e9f9485ef621d9c093821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50fc38dde338f2856b6a608d44fd1de5"><td class="memItemLeft" align="right" valign="top"><a id="a50fc38dde338f2856b6a608d44fd1de5"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.select_char</b> (index, match, player)</td></tr>
 <tr class="separator:a50fc38dde338f2856b6a608d44fd1de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5215e56203fe2fa6a2bab9c3c37b7e8e"><td class="memItemLeft" align="right" valign="top"><a id="a5215e56203fe2fa6a2bab9c3c37b7e8e"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.inc_color</b> (match, player, amt)</td></tr>
-<tr class="separator:a5215e56203fe2fa6a2bab9c3c37b7e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c78fc6aee8849c85452332674831a35"><td class="memItemLeft" align="right" valign="top"><a id="a5c78fc6aee8849c85452332674831a35"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.inc_color</b> (match, player_index, amt)</td></tr>
+<tr class="separator:a5c78fc6aee8849c85452332674831a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -89,66 +89,87 @@ Variables</h2></td></tr>
 <tr class="memitem:aeba22a4a8e155f08a33a3799589f2d8c"><td class="memItemLeft" align="right" valign="top"><a id="aeba22a4a8e155f08a33a3799589f2d8c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.current_match</b> = Match()</td></tr>
 <tr class="separator:aeba22a4a8e155f08a33a3799589f2d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb7bd11e520210113c84b9282e81806"><td class="memItemLeft" align="right" valign="top"><a id="afeb7bd11e520210113c84b9282e81806"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_char</b> = StringVar(top)</td></tr>
-<tr class="separator:afeb7bd11e520210113c84b9282e81806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa42749dad0211406f5bd2f3fbd552c05"><td class="memItemLeft" align="right" valign="top"><a id="aa42749dad0211406f5bd2f3fbd552c05"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_port</b> = StringVar(top)</td></tr>
-<tr class="separator:aa42749dad0211406f5bd2f3fbd552c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89b9720ddc50aedf4020ca8ac15ff34f"><td class="memItemLeft" align="right" valign="top"><a id="a89b9720ddc50aedf4020ca8ac15ff34f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.canvas_background</b> = Canvas(top)</td></tr>
-<tr class="separator:a89b9720ddc50aedf4020ca8ac15ff34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeb73753e44d101edb5068a2046f95ea"><td class="memItemLeft" align="right" valign="top"><a id="abeb73753e44d101edb5068a2046f95ea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.row</b></td></tr>
-<tr class="separator:abeb73753e44d101edb5068a2046f95ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaf6d4d4f3aa6b28868fe0c466eecbab"><td class="memItemLeft" align="right" valign="top"><a id="abaf6d4d4f3aa6b28868fe0c466eecbab"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char</b> = []</td></tr>
+<tr class="separator:abaf6d4d4f3aa6b28868fe0c466eecbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1a116653ba8313693aa02b4280bde1"><td class="memItemLeft" align="right" valign="top"><a id="a9d1a116653ba8313693aa02b4280bde1"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.port</b> = []</td></tr>
+<tr class="separator:a9d1a116653ba8313693aa02b4280bde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f6d478af14f2ca79313c66e3877b7fe"><td class="memItemLeft" align="right" valign="top"><a id="a7f6d478af14f2ca79313c66e3877b7fe"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char_icons</b> = []</td></tr>
+<tr class="separator:a7f6d478af14f2ca79313c66e3877b7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb21777989bbe75a28d9268cd69c731"><td class="memItemLeft" align="right" valign="top"><a id="a4fb21777989bbe75a28d9268cd69c731"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.player_frames</b> = []</td></tr>
+<tr class="separator:a4fb21777989bbe75a28d9268cd69c731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ed18d4bfb1091a3cbc8d9d3cb323a0"><td class="memItemLeft" align="right" valign="top"><a id="a81ed18d4bfb1091a3cbc8d9d3cb323a0"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.images</b> = []</td></tr>
+<tr class="separator:a81ed18d4bfb1091a3cbc8d9d3cb323a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15ece0628360210f45e3f3c320bd421"><td class="memItemLeft" align="right" valign="top"><a id="ac15ece0628360210f45e3f3c320bd421"></a>
+list&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.tkimgs</b> = []</td></tr>
+<tr class="separator:ac15ece0628360210f45e3f3c320bd421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11653629f15055674258f8ba9d1c3b9"><td class="memItemLeft" align="right" valign="top"><a id="aa11653629f15055674258f8ba9d1c3b9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char_variable</b> = StringVar(top)</td></tr>
+<tr class="separator:aa11653629f15055674258f8ba9d1c3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98fe970ed6c6486d3940c5bbe6deabdf"><td class="memItemLeft" align="right" valign="top"><a id="a98fe970ed6c6486d3940c5bbe6deabdf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.port_variable</b> = StringVar(top)</td></tr>
+<tr class="separator:a98fe970ed6c6486d3940c5bbe6deabdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2066d6e2bb65df60a2a4df2402ee43"><td class="memItemLeft" align="right" valign="top"><a id="adb2066d6e2bb65df60a2a4df2402ee43"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.img</b> = Image.open(&quot;media/stock/26_0.png&quot;)</td></tr>
+<tr class="separator:adb2066d6e2bb65df60a2a4df2402ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276744c7630ce61644e3b04a94141f02"><td class="memItemLeft" align="right" valign="top"><a id="a276744c7630ce61644e3b04a94141f02"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.tkimg</b> = ImageTk.PhotoImage(images[n])</td></tr>
+<tr class="separator:a276744c7630ce61644e3b04a94141f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c92050e89fcfee40a95c70d6ad6644"><td class="memItemLeft" align="right" valign="top"><a id="a05c92050e89fcfee40a95c70d6ad6644"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.pframe</b> = LabelFrame(top, text = &quot;Player &quot; + str(n+1))</td></tr>
+<tr class="separator:a05c92050e89fcfee40a95c70d6ad6644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b34bcfb04341c13eeaa70f9c090fe75"><td class="memItemLeft" align="right" valign="top"><a id="a7b34bcfb04341c13eeaa70f9c090fe75"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.column</b></td></tr>
 <tr class="separator:a7b34bcfb04341c13eeaa70f9c090fe75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfb293d407e3b0d0b16e7b9c63f0545f"><td class="memItemLeft" align="right" valign="top"><a id="adfb293d407e3b0d0b16e7b9c63f0545f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.rowspan</b></td></tr>
-<tr class="separator:adfb293d407e3b0d0b16e7b9c63f0545f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79241378c21696c0372f000f3216907a"><td class="memItemLeft" align="right" valign="top"><a id="a79241378c21696c0372f000f3216907a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.columnspan</b></td></tr>
-<tr class="separator:a79241378c21696c0372f000f3216907a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc35fefb5b3b8fa81a97d80ca0ebe7ee"><td class="memItemLeft" align="right" valign="top"><a id="abc35fefb5b3b8fa81a97d80ca0ebe7ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_tag_label</b> = ttk.Label(top, text=&quot;P1 Tag:&quot;)</td></tr>
-<tr class="separator:abc35fefb5b3b8fa81a97d80ca0ebe7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb73753e44d101edb5068a2046f95ea"><td class="memItemLeft" align="right" valign="top"><a id="abeb73753e44d101edb5068a2046f95ea"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.row</b></td></tr>
+<tr class="separator:abeb73753e44d101edb5068a2046f95ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ceedb71a2558dc374c20d8cfdcd39dc"><td class="memItemLeft" align="right" valign="top"><a id="a5ceedb71a2558dc374c20d8cfdcd39dc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.tag_label</b> = Label(player_frames[n], text=&quot;Tag:&quot;)</td></tr>
+<tr class="separator:a5ceedb71a2558dc374c20d8cfdcd39dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c079dcd65bdb867668a345bbd1928dd"><td class="memItemLeft" align="right" valign="top"><a id="a9c079dcd65bdb867668a345bbd1928dd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.sticky</b></td></tr>
 <tr class="separator:a9c079dcd65bdb867668a345bbd1928dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d792beb388740f24f74fa0fe96d7adb"><td class="memItemLeft" align="right" valign="top"><a id="a3d792beb388740f24f74fa0fe96d7adb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_port_label</b> = ttk.Label(top, text=&quot;Port:&quot;)</td></tr>
-<tr class="separator:a3d792beb388740f24f74fa0fe96d7adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8caca6b9c61dcdc814aecc61fe44804d"><td class="memItemLeft" align="right" valign="top"><a id="a8caca6b9c61dcdc814aecc61fe44804d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_prefix_label</b> = ttk.Label(top, text=&quot;Prefix:&quot;)</td></tr>
-<tr class="separator:a8caca6b9c61dcdc814aecc61fe44804d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0336db9c1f42e3c257c660b0b70fe7"><td class="memItemLeft" align="right" valign="top"><a id="a3e0336db9c1f42e3c257c660b0b70fe7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_tag</b> = ttk.Entry(top)</td></tr>
-<tr class="separator:a3e0336db9c1f42e3c257c660b0b70fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bb69c85637538643be84ec6a3428983"><td class="memItemLeft" align="right" valign="top"><a id="a2bb69c85637538643be84ec6a3428983"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_prefix</b> = ttk.Entry(top)</td></tr>
-<tr class="separator:a2bb69c85637538643be84ec6a3428983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e73603ce1cfef62281118542060c50d"><td class="memItemLeft" align="right" valign="top"><a id="a1e73603ce1cfef62281118542060c50d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_port_dropdown</b> = ttk.OptionMenu(top, p1_port, command = lambda _: update_characters(current_match), *ports)</td></tr>
-<tr class="separator:a1e73603ce1cfef62281118542060c50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c3c538e517359580574d7056250e5c9"><td class="memItemLeft" align="right" valign="top"><a id="a0c3c538e517359580574d7056250e5c9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_char_dropdown</b> = OptionMenu(top, p1_char, command = lambda _: update_characters(current_match), *character_names)</td></tr>
-<tr class="separator:a0c3c538e517359580574d7056250e5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41791e24c87e75f7068eb8514b924743"><td class="memItemLeft" align="right" valign="top"><a id="a41791e24c87e75f7068eb8514b924743"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_char_prevcolor</b> = Button(top, text = &quot;&lt;&quot;, command = lambda: inc_color(current_match, 1, -1))</td></tr>
-<tr class="separator:a41791e24c87e75f7068eb8514b924743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12b2956cea1641919400a0e8068e55f5"><td class="memItemLeft" align="right" valign="top"><a id="a12b2956cea1641919400a0e8068e55f5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_img</b> = Image.open(&quot;media/stock/26_0.png&quot;)</td></tr>
-<tr class="separator:a12b2956cea1641919400a0e8068e55f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66e427003e5f8197d61b3aa21811b98a"><td class="memItemLeft" align="right" valign="top"><a id="a66e427003e5f8197d61b3aa21811b98a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_tkimg</b> = ImageTk.PhotoImage(p1_img)</td></tr>
-<tr class="separator:a66e427003e5f8197d61b3aa21811b98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405bdbc98d7122b44be4c83ed66b90b6"><td class="memItemLeft" align="right" valign="top"><a id="a405bdbc98d7122b44be4c83ed66b90b6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_char_icon</b> = Label(top, image = p1_tkimg)</td></tr>
-<tr class="separator:a405bdbc98d7122b44be4c83ed66b90b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae94bde5ae11aba7e3b47c0d6fdb3a8f"><td class="memItemLeft" align="right" valign="top"><a id="aae94bde5ae11aba7e3b47c0d6fdb3a8f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.p1_char_nextcolor</b> = Button(top, text = &quot;&gt;&quot;, command = lambda: inc_color(current_match, 1, 1))</td></tr>
-<tr class="separator:aae94bde5ae11aba7e3b47c0d6fdb3a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f27aa2acb51f57b7c8a601675ae9b4e"><td class="memItemLeft" align="right" valign="top"><a id="a5f27aa2acb51f57b7c8a601675ae9b4e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.port_label</b> = Label(player_frames[n], text=&quot;Port:&quot;)</td></tr>
+<tr class="separator:a5f27aa2acb51f57b7c8a601675ae9b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614acc8b865fd35cc6788e491a82ae55"><td class="memItemLeft" align="right" valign="top"><a id="a614acc8b865fd35cc6788e491a82ae55"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.prefix_label</b> = Label(player_frames[n], text=&quot;Prefix:&quot;)</td></tr>
+<tr class="separator:a614acc8b865fd35cc6788e491a82ae55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79241378c21696c0372f000f3216907a"><td class="memItemLeft" align="right" valign="top"><a id="a79241378c21696c0372f000f3216907a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.columnspan</b></td></tr>
+<tr class="separator:a79241378c21696c0372f000f3216907a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475258a253276a181417dfc4911b235b"><td class="memItemLeft" align="right" valign="top"><a id="a475258a253276a181417dfc4911b235b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.tag</b> = Entry(player_frames[n])</td></tr>
+<tr class="separator:a475258a253276a181417dfc4911b235b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426ae7ad8fb2a353e56fad9e18ae5af7"><td class="memItemLeft" align="right" valign="top"><a id="a426ae7ad8fb2a353e56fad9e18ae5af7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.prefix</b> = Entry(player_frames[n])</td></tr>
+<tr class="separator:a426ae7ad8fb2a353e56fad9e18ae5af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23792402b2c1e3cd4ac95734c152a3f2"><td class="memItemLeft" align="right" valign="top"><a id="a23792402b2c1e3cd4ac95734c152a3f2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.port_dropdown</b> = OptionMenu(player_frames[n], port[n], command = lambda _: update_character(current_match, n), *ports)</td></tr>
+<tr class="separator:a23792402b2c1e3cd4ac95734c152a3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349c250bb9c542586a39f703129bf1ab"><td class="memItemLeft" align="right" valign="top"><a id="a349c250bb9c542586a39f703129bf1ab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char_dropdown</b> = OptionMenu(player_frames[n], char[n], command = lambda _: update_character(current_match, n), *character_names)</td></tr>
+<tr class="separator:a349c250bb9c542586a39f703129bf1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417e503cdaf034aab032754c74773ef0"><td class="memItemLeft" align="right" valign="top"><a id="a417e503cdaf034aab032754c74773ef0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char_prevcolor</b> = Button(player_frames[n], text = &quot;&lt;&quot;)</td></tr>
+<tr class="separator:a417e503cdaf034aab032754c74773ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0d39d1ee7b9d7919ed8b177adab3b0"><td class="memItemLeft" align="right" valign="top"><a id="a3a0d39d1ee7b9d7919ed8b177adab3b0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.n</b></td></tr>
+<tr class="separator:a3a0d39d1ee7b9d7919ed8b177adab3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d2e1c80fc3ee5698f60bb631bd48c3"><td class="memItemLeft" align="right" valign="top"><a id="ae3d2e1c80fc3ee5698f60bb631bd48c3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.priority</b></td></tr>
+<tr class="separator:ae3d2e1c80fc3ee5698f60bb631bd48c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2c02c09ad92620cf16a7f1da73726d"><td class="memItemLeft" align="right" valign="top"><a id="aaa2c02c09ad92620cf16a7f1da73726d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.command</b></td></tr>
+<tr class="separator:aaa2c02c09ad92620cf16a7f1da73726d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef1856411ac856f47a7ffef6be7184d"><td class="memItemLeft" align="right" valign="top"><a id="adef1856411ac856f47a7ffef6be7184d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.char_icon</b> = Label(player_frames[n], image = tkimgs[n])</td></tr>
+<tr class="separator:adef1856411ac856f47a7ffef6be7184d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3183ba3f1221a8edbcf5308c45d3b93"><td class="memItemLeft" align="right" valign="top"><a id="ad3183ba3f1221a8edbcf5308c45d3b93"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ssbm-py.gui.update_button</b> = Button(top, text = &quot;UPDATE&quot;, command = lambda: update(current_match))</td></tr>
 <tr class="separator:ad3183ba3f1221a8edbcf5308c45d3b93"><td class="memSeparator" colspan="2">&#160;</td></tr>

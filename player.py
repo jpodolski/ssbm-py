@@ -22,6 +22,8 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
+from information import *
+
 class Player:
     """
     A class describing a specific player.
@@ -59,7 +61,7 @@ class Player:
 
     def set_sub_color(self, new_sub_color):
         """ A mutator for __sub_color """
-        self.__sub_color = new_sub_color
+        self.__sub_color = new_sub_color%(char_mod_table[character_names.index(self.__char)])
 
     def set_team(self, new_team):
         """ A mutator for __team """
