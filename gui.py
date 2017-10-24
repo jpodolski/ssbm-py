@@ -27,12 +27,22 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 from tkinter import *
 import tkinter.ttk as ttk
 from file_manip import *
-from match import Match
+from match import Match 
 from PIL import Image, ImageTk
 from information import *
 import math
 
 top = Tk() #Define top 
+
+nbook = ttk.Notebook(top)
+f1 = ttk.Frame(nbook)   # first page, which would get widgets gridded into it
+f2 = ttk.Frame(nbook)   # second page
+f3 = ttk.Frame(nbook)   # second page
+nbook.add(f1, text='Player Info')
+nbook.add(f2, text='Settings')
+nbook.add(f3, text='Scene Control')
+
+nbook.grid()
 
 current_match = Match()
 char = []
@@ -81,48 +91,48 @@ for n in range (0, 4):
 	tkimgs.append(tkimg)
 
 for n in range (0, 4):
-	pframe = LabelFrame(top, text = "Player " + str(n+1))
+	pframe = ttk.LabelFrame(f1, text = "Player " + str(n+1))
 	pframe.grid(column = math.floor(n/2), row = n%2)
 	player_frames.append(pframe)
 
-	tag_label = Label(player_frames[n], text="Tag:")
+	tag_label = ttk.Label(player_frames[n], text="Tag:")
 	tag_label.grid(row = 0, column = 0, sticky = W)
 
-	port_label = Label(player_frames[n], text="Port:")
+	port_label = ttk.Label(player_frames[n], text="Port:")
 	port_label.grid(row = 1, column = 5, sticky = W)
 
-	prefix_label = Label(player_frames[n], text="Prefix:")
+	prefix_label = ttk.Label(player_frames[n], text="Prefix:")
 	prefix_label.grid(row = 0, column = 2, columnspan=2, sticky = W)
 
-	tag = Entry(player_frames[n])#, bd = 1)
+	tag = ttk.Entry(player_frames[n])
 	tag.grid(row = 0, column = 1, columnspan = 1)
 
-	prefix = Entry(player_frames[n])#, bd = 1""")
+	prefix = ttk.Entry(player_frames[n])
 	prefix.grid(row = 0, column = 3, columnspan = 4)
 
-	port_dropdown = OptionMenu(player_frames[n], port[n], command = lambda _: update_character(current_match, n), *ports)
+	port_dropdown = ttk.OptionMenu(player_frames[n], port[n], command = lambda _: update_character(current_match, n), *ports)
 	port_dropdown.grid(row = 1, column = 6, columnspan = 1, sticky = EW)
 
-	char_dropdown = OptionMenu(player_frames[n], char[n], command = lambda _: update_character(current_match, n), *character_names)
+	char_dropdown = ttk.OptionMenu(player_frames[n], char[n], command = lambda _: update_character(current_match, n), *character_names)
 	char_dropdown.grid(row = 1, column = 0, columnspan = 2, sticky = EW)
 
 
-	char_prevcolor = Button(player_frames[n], text = "<")
+	char_prevcolor = ttk.Button(player_frames[n], text = "<", width=1)
 	char_prevcolor.config(command = lambda i=n: inc_color(current_match, i, -1))
 	char_prevcolor.grid(row = 1, column = 2)
 
-	char_icon = Label(player_frames[n], image = tkimgs[n])
+	char_icon = ttk.Label(player_frames[n], image = tkimgs[n])
 	char_icon.grid(row = 1, column = 3)
 	char_icons.append(char_icon)
 
-	char_nextcolor = Button(player_frames[n], text = ">")
+	char_nextcolor = ttk.Button(player_frames[n], text = ">", width=1)
 	char_nextcolor.config(command = lambda i=n: inc_color(current_match, i, 1))
 	char_nextcolor.grid(row = 1, column = 4)
 
 
-update_button = Button(top, text = "UPDATE", command = lambda: update(current_match))
+update_button = ttk.Button(top, text = "UPDATE", command = lambda: update(current_match))
 update_button.grid(row = 10, column = 0)
 
 #C1 = Canvas(top, image = 
 top.mainloop()
-top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top.mainloop()
+#top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top.mainloop()
