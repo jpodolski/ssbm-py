@@ -31,6 +31,7 @@ from match import Match
 from PIL import Image, ImageTk
 from information import *
 import math
+from PlayerFrame import *
 
 top = Tk() #Define top 
 
@@ -57,6 +58,9 @@ def update_character(match, player_index=0):
 		char_icons[player_index].configure(image = tkimgs[player_index])
 		char_icons[player_index].image = tkimgs[player_index]
 
+def update_colors(match, player_index = 0):
+	print("aye")
+
 # ==================================================================
 #			PLAYER 1 GUI ELEMENTS
 # ==================================================================
@@ -79,6 +83,29 @@ for n in range (0, 4):
 	images.append(img)
 	tkimg = ImageTk.PhotoImage(images[n])
 	tkimgs.append(tkimg)
+	pframe_object = PlayerFrame(top)
+	player_frames.append(pframe_object)
+	player_frames[n].set_player(n+1)
+	player_frames[n].align()
+	
+
+"""
+old code would go here
+"""
+
+update_button = Button(top, text = "UPDATE", command = lambda: update(current_match))
+update_button.grid(row = 10, column = 0)
+
+#C1 = Canvas(top, image = 
+top.mainloop()
+top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top.mainloop()
+
+
+
+
+""" 
+
+OLD CODE
 
 for n in range (0, 4):
 	pframe = LabelFrame(top, text = "Player " + str(n+1))
@@ -94,10 +121,10 @@ for n in range (0, 4):
 	prefix_label = Label(player_frames[n], text="Prefix:")
 	prefix_label.grid(row = 0, column = 2, columnspan=2, sticky = W)
 
-	tag = Entry(player_frames[n])#, bd = 1)
+	tag = Entry(player_frames[n])
 	tag.grid(row = 0, column = 1, columnspan = 1)
 
-	prefix = Entry(player_frames[n])#, bd = 1""")
+	prefix = Entry(player_frames[n])
 	prefix.grid(row = 0, column = 3, columnspan = 4)
 
 	port_dropdown = OptionMenu(player_frames[n], port[n], command = lambda _: update_character(current_match, n), *ports)
@@ -118,11 +145,5 @@ for n in range (0, 4):
 	char_nextcolor = Button(player_frames[n], text = ">")
 	char_nextcolor.config(command = lambda i=n: inc_color(current_match, i, 1))
 	char_nextcolor.grid(row = 1, column = 4)
+"""
 
-
-update_button = Button(top, text = "UPDATE", command = lambda: update(current_match))
-update_button.grid(row = 10, column = 0)
-
-#C1 = Canvas(top, image = 
-top.mainloop()
-top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top.mainloop()
