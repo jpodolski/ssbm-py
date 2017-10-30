@@ -46,9 +46,8 @@ player_frames = []
 def update(match):
 	tags = []
 	for n in range (0,4):
-	tags.append(player_frames[n].tag.get())
-	write_stock_icons(match)
-	write_player_tags(match, tags)
+		write_stock_icons(match)
+		write_player_tags(match, tags)
 
 for n in range (0, 4):
 	pframe_object = PlayerFrame(top)

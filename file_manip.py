@@ -24,7 +24,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 
 from match import Match
 from PIL import Image, ImageTk
-from utilities import *
+from information import *
 
 def gen_char_filename(char, sub_color):
 	return ("media/stock/" + str(character_names.index(char)) + "_" + str(sub_color) + ".png")
