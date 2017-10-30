@@ -9,18 +9,13 @@
 
 # ==============================================================================
 """
-
 GUI.PY
-
 Attribution 4.0 International (CC BY 4.0)
-
 All code below is free and open source, intended to better the smash community
 You are free to copy, modify, and redistribute this code as long as credit
 is given to the original author (Jeff Podolski). Check out the source!
-
 Github Repo: http://github.com/jpodolski/ssbm-py
 Sharing License: https://creativecommons.org/licenses/by/4.0/
-
 """
 # ==============================================================================
 
@@ -38,12 +33,16 @@ class PlayerFrame:
     A GUI class that contains the components responsible
     for editing one Player item in the InfoTab
     """
-
+        
     #  Initialization
     #  ==============================
     def __init__(self, parent):
         self.__player = 0
         self.__port = 0
+        self.__tkport = IntVar()
+        self.__tkport.set(0)
+        self.__tkchar = StringVar()
+        self.__tkchar.set("HELLO")
         self.__char = "Generic"
         self.__sub_color = 0
         self.__image = Image.open("media/stock/26_0.png")
@@ -65,22 +64,21 @@ class PlayerFrame:
         self.prefix = Entry(self.pframe)
         self.prefix.grid(row = 0, column = 4, columnspan = 3)
 
-        self.port_dropdown = OptionMenu(self.pframe, self.__port, command = lambda _: select_port(), *ports)
+        self.port_dropdown = OptionMenu(self.pframe, self.__tkport, command = lambda _: self.select_port(), *ports)
         self.port_dropdown.grid(row = 1, column = 6, columnspan = 1, sticky = EW)
 
-        self.char_dropdown = OptionMenu(self.pframe, self.__char, command = lambda _: select_character(), *character_names)
+        self.char_dropdown = OptionMenu(self.pframe, self.__tkchar, command = lambda _: self.select_character(self), *character_names)
         self.char_dropdown.grid(row = 1, column = 0, columnspan = 2, sticky = EW)
 
-
         self.char_prevcolor = Button(self.pframe, text = "<")
-        self.char_prevcolor.config(command = lambda: inc_color(-1))
+        self.char_prevcolor.config(command = lambda: self.inc_color(-1))
         self.char_prevcolor.grid(row = 1, column = 2)
 
         self.char_icon = Label(self.pframe, image = self.__tkimg)
         self.char_icon.grid(row = 1, column = 3)
 
         self.char_nextcolor = Button(self.pframe, text = ">")
-        self.char_nextcolor.config(command = lambda: inc_color(1))
+        self.char_nextcolor.config(command = lambda: self.inc_color(1))
         self.char_nextcolor.grid(row = 1, column = 4)
 
     def set_player(self, new_player):
@@ -94,7 +92,17 @@ class PlayerFrame:
     def align(self):
         self.pframe.grid(row = math.floor((self.__player-1)/2), column = (self.__player-1)%2)
         self.pframe.config(text = "Player" + str(self.__player))
-
     def inc_color(self, amt):
-        self.__sub_color = self.__sub_color + amt
+        self.__sub_color = (self.__sub_color + amt)%(char_mod_table[character_names.index(self.__char)]+1)
+        self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
+        self.__tkimg = ImageTk.PhotoImage(self.__image)
+        self.char_icon.configure(image = self.__tkimg)
+    def select_character(self, string):
+        self.__char = self.__tkchar.get()
+        self.__sub_color = 0
+        self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
+        self.__tkimg = ImageTk.PhotoImage(self.__image)
+        self.char_icon.configure(image = self.__tkimg)
+
+
 

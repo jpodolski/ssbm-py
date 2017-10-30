@@ -26,10 +26,8 @@ from match import Match
 from PIL import Image, ImageTk
 from utilities import *
 
-def gen_char_filename(match, player_index):
-	player_string = "player" + str(player_index)
-	print ("media/stock/" + str(character_names.index(match.player[player_index].get_char())) + "_" + str(match.player[player_index].get_sub_color()) + ".png")
-	return ("media/stock/" + str(character_names.index(match.player[player_index].get_char())) + "_" + str(match.player[player_index].get_sub_color()) + ".png")
+def gen_char_filename(char, sub_color):
+	return ("media/stock/" + str(character_names.index(char)) + "_" + str(sub_color) + ".png")
 
 def write_stock_icons(match):
 	for n in range (0,4):
@@ -48,16 +46,3 @@ def write_player_prefixes(match):
 		file = open("OBS/p" + str(n+1) + "_prefix", "w")
 		file.write(match.player[n].get_prefix())
 		file.close()
-
-
-def write_team_images(match):
-	print("placeholder")
-
-def write_shit():
-	print("placeholder")
-
-def export_player_append():
-	print("placeholder")
-
-def write_team_names():
-	print("yo")
