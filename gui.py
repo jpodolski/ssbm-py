@@ -22,13 +22,23 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 from tkinter import *
 import tkinter.ttk as ttk
 from file_manip import *
-from match import Match
+from match import Match 
 from PIL import Image, ImageTk
 from information import *
 import math
 from PlayerFrame import *
 
 top = Tk() #Define top 
+
+nbook = ttk.Notebook(top)
+f1 = ttk.Frame(nbook)   # first page, which would get widgets gridded into it
+f2 = ttk.Frame(nbook)   # second page
+f3 = ttk.Frame(nbook)   # second page
+nbook.add(f1, text='Player Info')
+nbook.add(f2, text='Settings')
+nbook.add(f3, text='Scene Control')
+
+nbook.grid()
 
 current_match = Match()
 player_frames = []

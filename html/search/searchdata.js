@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "acfgimprst",
   1: "amp",
-  2: "cfgimp",
+  2: "cfimp",
   3: "gis",
   4: "rt"
 };
