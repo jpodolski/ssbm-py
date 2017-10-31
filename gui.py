@@ -29,6 +29,7 @@ import math
 from PlayerFrame import *
 
 top = Tk() #Define top 
+top.winfo_toplevel().title("miniGIMR")
 
 nbook = ttk.Notebook(top)
 f1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
