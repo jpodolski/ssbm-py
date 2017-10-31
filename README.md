@@ -1,21 +1,41 @@
-This is an in-progress project designed to be a utility for SSBM Streamers using OBS
+# SSBM Scoreboard
+ssbm-py is a python GUI written to help SSBM streamers manage OBS and their overlay. It is currently in beta and (will soon) feature support for
+  - Stock Head Icons, Tags, and Prefixes
+  - Automatic Scene Switching 
+  - Webcam management
 
-Project Goals:
-	- Create a comprehensive but simple class for an SSBM Match
-	- Develop a GUI with a system to store, record, and manipulate Match data
-	- Use challonge.com's API to link challonge matches to Match objects
-	- Provide a suite of misc. tools to interact with OBS though plugins/files
+### Setting up the application
 
-Development is ongoing and likely unstable until further notice. This repo is primarily for my personal use and organization
+First things first, you'll need to have python3 installed. You can check if you have python3 installed by typing 
+```sh
+$ which python3
+```
+..into a terminal window. If you see something like 
+```sh
+$ /usr/bin/python3
+```
+Then it's already installed. If you don't see anything, then you need python3. You can download it from the link below:
+[Download Python Here](https://www.python.org/downloads/)
+
+Once you've got python installed, simply start up the program by opening a terminal in the ssbm-py directory, and typing
+```sh
+python3 gui.py
+```
+to get started.
+
+### Configuring with OBS
+
+Unfortunately, even this readme is a work in progress, so you can figure it out on your own for now.
+
+### Authors
+Primary authorship and documentation was done by Jeffrey Podolski
+
+### Legal
+This software is licensed under the
+[**Attribution-NonCommercial-ShareAlike 4.0 License**](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+![logo](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
+
+This license allows you to remix, tweak, and build upon this work non-commercially, as long as you credit this project & its authors, and license new creations under the identical terms.
 
 
 
-TO DO:
-	- Create Match class
-	- Create TKinter GUI
-	- Link TKinter GUI with the Match class
-	- Write file manipulation functions
-	- Integrate Challonge
-	- Document with Doxygen
-	- Get a stable version
-	- Test/debug on different systems

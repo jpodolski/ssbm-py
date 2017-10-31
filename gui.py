@@ -31,9 +31,9 @@ from PlayerFrame import *
 top = Tk() #Define top 
 
 nbook = ttk.Notebook(top)
-f1 = ttk.Frame(nbook)   # first page, which would get widgets gridded into it
+f1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
 f2 = ttk.Frame(nbook)   # second page
-f3 = ttk.Frame(nbook)   # second page
+f3 = ttk.Frame(nbook)   # third page
 nbook.add(f1, text='Player Info')
 nbook.add(f2, text='Settings')
 nbook.add(f3, text='Scene Control')
@@ -50,7 +50,7 @@ def update(match):
 		write_player_tags(match, tags)
 
 for n in range (0, 4):
-	pframe_object = PlayerFrame(top)
+	pframe_object = PlayerFrame(f1)
 	player_frames.append(pframe_object)
 	player_frames[n].set_player(n+1)
 	player_frames[n].align()
