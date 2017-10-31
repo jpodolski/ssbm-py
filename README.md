@@ -10,7 +10,7 @@ ssbm-py is a python GUI written to help SSBM streamers manage OBS and their over
   - Keeping H2H and placement statistics though bracket/player management tools
   - JSON formatted objects for Matches, Tounaments, and Players
 
-### Setting up the application
+## Setting up the application
 
 First things first, you'll need to have python3 installed. You can check if you have python3 installed by typing 
 ```sh
@@ -30,14 +30,14 @@ python3 gui.py
 ```
 to get started.
 
-### Configuring with OBS
+## Configuring with OBS
 
 All files are saved to the OBS/ directory, and your media in OBS should be linked to these files. Text files are generated for player tags, sponsors, and ports, and images for character icons and team names.
 
-### Authors
+## Authors
 Primary authorship and documentation was done by Jeffrey Podolski.
 
-### Legal
+## Legal
 This software is licensed under the
 
 [**Attribution-NonCommercial-ShareAlike 4.0 License**](https://creativecommons.org/licenses/by-nc-sa/4.0/)
