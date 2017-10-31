@@ -55,7 +55,9 @@ Primary authorship and documentation was done by Jeffrey Podolski and is license
 
 ## Legal
 This software is licensed under the
+
 [**Attribution-NonCommercial-ShareAlike 4.0 License**](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![logo](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
 This license allows you to remix, tweak, and build upon this work non-commercially, as long as you credit this project & its authors, and license new creations under the identical terms.
