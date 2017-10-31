@@ -44,7 +44,7 @@ class PlayerFrame:
         self.__tkport.set("Player" + str(self.__player))
         self.__tkchar = StringVar()
         self.__tkchar.set("Generic")
-        self.__char = "Generic"
+        self.__char = 26
         self.__sub_color = 0
         self.__image = Image.open("media/stock/26_0.png")
         self.__tkimg = ImageTk.PhotoImage(self.__image)
@@ -86,15 +86,15 @@ class PlayerFrame:
 
     def get_tag(self):
         """ Returns tag as string """
-        return("PLACEHOLDER")
+        return(self.tag.get())
 
     def get_char(self):
         """ Returns char as int """
-        return("PLACEHOLDER")
+        return(self.__char)
 
     def get_sub_color(self):
         """ Returns sub-color as int (0-N) """
-        return("PLACEHOLDER")
+        return(self.__sub_color)
 
     def get_port(self):
         """ Returns port as int (1-4) """
@@ -116,14 +116,14 @@ class PlayerFrame:
 
     def inc_color(self, amt):
         """ Adds the value amt to __sub_color and refreshes image. Called by char_nextcolor and char_prevcolor """
-        self.__sub_color = (self.__sub_color + amt)%(char_mod_table[character_names.index(self.__char)]+1)
+        self.__sub_color = (self.__sub_color + amt)%(char_mod_table[self.__char]+1)
         self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
         self.__tkimg = ImageTk.PhotoImage(self.__image)
         self.char_icon.configure(image = self.__tkimg)
 
     def select_character(self, string):
         """ Sets __char to string and resets sub color. Updates image as well """
-        self.__char = self.__tkchar.get()
+        self.__char = character_names.index(self.__tkchar.get())
         self.__sub_color = 0
         self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
         self.__tkimg = ImageTk.PhotoImage(self.__image)

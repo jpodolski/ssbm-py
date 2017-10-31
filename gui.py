@@ -43,11 +43,10 @@ nbook.grid()
 current_match = Match()
 player_frames = []
 
-def update(match):
-	tags = []
+def update(player_frames):
 	for n in range (0,4):
-		write_stock_icons(match)
-		write_player_tags(match, tags)
+		write_stock_icons(player_frames)
+		write_player_tags(player_frames)
 
 for n in range (0, 4):
 	pframe_object = PlayerFrame(f1)
@@ -55,7 +54,7 @@ for n in range (0, 4):
 	player_frames[n].set_player(n+1)
 	player_frames[n].align()
 	
-update_button = Button(top, text = "UPDATE", command = lambda: update(current_match))
+update_button = Button(top, text = "UPDATE", command = lambda: update(player_frames))
 update_button.grid(row = 10, column = 0)
 
 

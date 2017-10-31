@@ -27,18 +27,17 @@ from PIL import Image, ImageTk
 from information import *
 
 def gen_char_filename(char, sub_color):
-	return ("media/stock/" + str(character_names.index(char)) + "_" + str(sub_color) + ".png")
+	return ("media/stock/" + str(char) + "_" + str(sub_color) + ".png")
 
-def write_stock_icons(match):
+def write_stock_icons(player_frames):
 	for n in range (0,4):
-		stock = Image.open(gen_char_filename(match, n))
+		stock = Image.open(gen_char_filename(player_frames[n].get_char(), player_frames[n].get_sub_color()))
 		stock.save("OBS/p" + str(n+1) + "_char.png", "PNG")
 
-def write_player_tags(match, tags):
+def write_player_tags(player_frames):
 	for n in range (0,4):
-		match.player[n].set_tag(tags[n])
-		file = open("OBS/p" + str(n+1) + "_tag", "w")
-		file.write(match.player[n].get_tag())
+		file = open("OBS/p" + str(n+1) + "_tag.txt", "w")
+		file.write(player_frames[n].get_tag())
 		file.close()
 
 def write_player_prefixes(match):
