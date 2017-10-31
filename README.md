@@ -29,13 +29,13 @@ Then it's already installed. If you don't see anything, then you need python3. Y
 
 ### [Download Python Here](https://www.python.org/downloads/)
 
-Once you've got python installed, you need to install ssbm-py. Open a terminal in the directory you want the program to run from (it will create it's own new folder) and enter the following command
+Once you've got python installed, you need to install ssbm-py. Open a terminal in the directory you want the program's main folder to be located in, and type 
 
 ```sh
 git clone https://github.com/jpodolski/ssbm-py.git
 ```
 
-Once everything has downloaded, navigate to the main folder labeled ```ssbm-py``` and type
+Once everything has downloaded, navigate to the new main folder named ```ssbm-py``` and type
 
 ```sh
 $ python3 gui.py
