@@ -1,8 +1,10 @@
 # SSBM Scoreboard
-ssbm-py is a python GUI written to help SSBM streamers manage OBS and their overlay. It is currently in beta and (will soon) feature support for
+ssbm-py is a python GUI written to help SSBM streamers manage OBS and their overlay. It is currently in Alpha and (will soon) feature support for
   - Stock Head Icons, Tags, and Prefixes
   - Automatic Scene Switching 
   - Webcam management
+
+*Please understand that the project is under constant development, and that no features and/or functionalities are guaranteed to work at this time.*
 
 ### Setting up the application
 
