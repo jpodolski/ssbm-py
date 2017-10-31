@@ -22,7 +22,7 @@ $ /usr/bin/python3
 ```
 Then it's already installed. If you don't see anything, then you need python3. You can download it from the link below:
 
-#[Download Python Here](https://www.python.org/downloads/)
+### [Download Python Here](https://www.python.org/downloads/)
 
 Once you've got python installed, simply start up the program by opening a terminal in the ssbm-py directory, and typing
 ```sh
