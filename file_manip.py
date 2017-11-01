@@ -1,9 +1,9 @@
 ## @file file_manip.py
 ## @author Jeff Podolski
 ## @todo
-#   - Make this work
-#   - Add real functions
-#   - Clean and comment everything
+#   - Make this work (DONE)
+#   - Add real functions (KIND OF DONE)
+#   - Add in pickle, html, json, etc support (UGH)
 
 # ==============================================================================
 """

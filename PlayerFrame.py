@@ -3,13 +3,13 @@
 ## @file PlayerFrame.py
 ## @author Jeff Podolski
 ## @todo
-#   - Add tabs for settings
-#   - Fix file write stuff
-#   - Fix referencing 
+#   - Better documentation
+#   - Works fine tbh
 
 # ==============================================================================
 """
-GUI.PY
+PLAYERFRAME.PY
+
 Attribution 4.0 International (CC BY 4.0)
 All code below is free and open source, intended to better the smash community
 You are free to copy, modify, and redistribute this code as long as credit
