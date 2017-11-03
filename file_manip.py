@@ -26,6 +26,15 @@ from match import Match
 from PIL import Image, ImageTk
 from information import *
 
+import fileinput
+def write_html_tags(player_frames):
+	for n in range (0,4):
+		with open("templates/tag.html", 'r') as in_file :
+			filedata = in_file.read()
+		filedata = filedata.replace('$PLAYER', player_frames[n].get_tag())
+		with open("OBS/p" + str(n+1) + "_tag.html", 'w') as out_file:
+			out_file.write(filedata)
+
 def gen_char_filename(char, sub_color):
 	return ("media/stock/" + str(char) + "_" + str(sub_color) + ".png")
 

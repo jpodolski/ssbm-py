@@ -111,7 +111,7 @@ class PlayerFrame:
 
     def align(self):
         """ Arranges modules inside the frame and sets the appropriate Label text """
-        self.pframe.grid(row = math.floor((self.__player-1)/2), column = (self.__player-1)%2)
+        # self.pframe.grid(row = math.floor((self.__player-1)/2), column = (self.__player-1)%2)
         self.pframe.config(text = "Player" + str(self.__player))
 
     def inc_color(self, amt):

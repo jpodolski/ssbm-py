@@ -27,6 +27,7 @@ from PIL import Image, ImageTk
 from information import *
 import math
 from PlayerFrame import *
+from Dashboard import *
 
 top = Tk() #Define top 
 top.winfo_toplevel().title("miniGIMR")
@@ -35,27 +36,36 @@ nbook = ttk.Notebook(top)
 f1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
 f2 = ttk.Frame(nbook)   # second page
 f3 = ttk.Frame(nbook)   # third page
-nbook.add(f1, text='Player Info')
-nbook.add(f2, text='Settings')
-nbook.add(f3, text='Scene Control')
+f4 = ttk.Frame(nbook)   # third page
+f5 = ttk.Frame(nbook)   # third page
+nbook.add(f1, text='Dashboard')
+nbook.add(f2, text='Stream Info')
+nbook.add(f3, text='HTML Output')
+nbook.add(f4, text='Scene Control')
+nbook.add(f5, text='Settings')
 
 nbook.grid()
 
 current_match = Match()
-player_frames = []
+dashboard = Dashboard(f1)
+
+
+def switch():
+	nbook.select(1)
+	
+switchbutton = ttk.Button(f4, text = "switch!", command = lambda: switch())
+switchbutton.grid()
 
 def update(player_frames):
 	for n in range (0,4):
 		write_stock_icons(player_frames)
 		write_player_tags(player_frames)
+		write_html_tags(player_frames)
 
-for n in range (0, 4):
-	pframe_object = PlayerFrame(f1)
-	player_frames.append(pframe_object)
-	player_frames[n].set_player(n+1)
-	player_frames[n].align()
+html_object = ttk.Label(f3, text = "SETTINGS COMIN SOON!")
+html_object.grid()
 	
-update_button = Button(top, text = "UPDATE", command = lambda: update(player_frames))
+update_button = Button(top, text = "UPDATE", command = lambda: update(dashboard.player_frames))
 update_button.grid(row = 10, column = 0)
 
 
