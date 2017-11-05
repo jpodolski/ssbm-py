@@ -51,6 +51,17 @@ def write_player_tags(player_frames):
 
 def write_player_prefixes(match):
 	for n in range (0,4):
-		file = open("OBS/p" + str(n+1) + "_prefix", "w")
+		file = open("OBS/p" + str(n+1) + "_prefix.txt", "w")
 		file.write(match.player[n].get_prefix())
 		file.close()
+
+def write_scores(side, score):
+	file = open("OBS/score_" + str(side+1) + ".txt", "w")
+	file.write(str(score))
+	file.close()
+
+def update(player_frames):
+	for n in range (0,4):
+		write_stock_icons(player_frames)
+		write_player_tags(player_frames)
+		write_html_tags(player_frames)

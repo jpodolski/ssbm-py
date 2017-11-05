@@ -42,23 +42,23 @@ class ScoreCounter:
         self.__score = 0
         self.score_frame = ttk.Frame(parent)
         self.score_frame.grid()
-        self.tag_label = ttk.Label(self.score_frame, text="Placeholder " + str(self.__side + 1), font = ("Helvetica", 24))
-        self.tag_label.grid(row = 0, column = 0, sticky = W)
+        self.score_label = ttk.Label(self.score_frame, text = str(self.__score), font = ("Helvetica", 48))
+        self.inc_button = ttk.Button(self.score_frame, text = "▲", width = 1, command = lambda: self.inc_score(1))
+        self.dec_button = ttk.Button(self.score_frame, text = "▼", width = 1, command = lambda: self.inc_score(-1))
+        self.score_label.grid(row = 1, column = 0)
+        self.inc_button.grid(row = 0, column = 0)
+        self.dec_button.grid(row = 2, column = 0)
 
     """ ACCESSORS """
-
-    def get_score(self):
-        """ Returns tag as string """
-        return(self.__score)
-
-    def get_side(self):
+    def set_side(self, side):
         """ Returns char as int """
-        return(self.__side)
+        self.__side = side
 
     """ INTERNAL FUNCTIONS """
-
     def inc_score(self, amt):
-        """ Adds the value amt to __sub_color and refreshes image. Called by char_nextcolor and char_prevcolor """
-        self.__sub_color = (self.__sub_color + amt)%(char_mod_table[self.__char]+1)
+        """ Adds the value amt to __score, refreshes the label, and writes the score out. """
+        self.__score = self.__score + amt
+        self.score_label.config(text = str(self.__score))
+        write_scores(self.__side, self.__score)
 
 

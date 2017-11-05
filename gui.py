@@ -56,18 +56,9 @@ def switch():
 switchbutton = ttk.Button(f4, text = "switch!", command = lambda: switch())
 switchbutton.grid()
 
-def update(player_frames):
-	for n in range (0,4):
-		write_stock_icons(player_frames)
-		write_player_tags(player_frames)
-		write_html_tags(player_frames)
+html_object = ttk.Label(f3, text = "Settings coming soon. For now, just edit ssbm-py/OBS/tag.css yourself")
+html_object.pack()
 
-html_object = ttk.Label(f3, text = "SETTINGS COMIN SOON!")
-html_object.grid()
-	
-update_button = Button(top, text = "UPDATE", command = lambda: update(dashboard.player_frames))
-update_button.grid(row = 10, column = 0)
-
-
+top.resizable(0,0)
 top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top
 top.mainloop()
