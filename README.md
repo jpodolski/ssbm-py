@@ -16,7 +16,7 @@
   - VoD tools for generating video titles, thumbnails, and timestamps
   - Plenty more bells 'n' whistles
 
-*NOTE: Please understand that as this is an (relatively) untested work-in-progress, and no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality, a*
+*NOTE: Please understand that as this is an (relatively) untested work-in-progress, and no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality.*
 
 
 ## Setting up the application (Unix)
