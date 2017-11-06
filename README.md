@@ -2,20 +2,24 @@
 
 ![screenshot](https://i.imgur.com/o9m1RDO.png)
 
-**miniGIMR** is a python GUI written to help SSBM streamers manage OBS and their overlay. It is currently in pre-alpha (though it technically works). Planned features include
-  - Stock Head Icons, Tags, and Prefixes
-  - Canned formatting and customization options
-  - HTML output
-  - Automatic Scene Switching 
-  - Webcam management
-  - Support for Challonge and Smash.gg APIs
-  - Keeping H2H and placement statistics though bracket/player management tools
+**miniGIMR** is a python GUI written to help SSBM streamers manage OBS and their overlay. It is currently in pre-alpha (though it technically works). Planned and/or current features include
+  - Control over Stock Head Icons, Tags, Prefixes, etc.
+  - HTML, CSS and customization options
+  - Automatic Scene Switching
+  - Setup Wizard for easy configuration
+  - Virtual Webcam management
+  - Integration with autoGIMR and tinyTafo (stream automation and statkeeping programs, respectively)
+  - Support for Bracket/Player import using Challonge and Smash.gg's APIs
+  - Keeping various player statistics though stat collection/management tools (tinyTafo)
+  - Autonomous scene switching and overlay control based on fizzi's stat technology or autoGIMR
   - JSON formatted objects and save files for Matches, Tounaments, and Players
+  - VoD tools for generating video titles, thumbnails, and timestamps
+  - Plenty more bells 'n' whistles
 
-*NOTE: Please understand that as this is a work-in-progress, no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality*
+*NOTE: Please understand that as this is an (relatively) untested work-in-progress, and no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality, a*
 
 
-## Setting up the application
+## Setting up the application (Unix)
 
 First things first, you'll need to have python3 installed. You can check if you have python3 installed by typing 
 ```sh
@@ -47,7 +51,7 @@ to get started.
 
 ## Configuring with OBS
 
-All files are saved to the ``` ssbm-py/OBS/ ``` directory, and your media in OBS should be linked to these files. Text files are generated for player tags, sponsors, and ports, and images for character icons and team names. Follow the examples below for adding a text and image source to your broadcast. Note the file paths.
+All files OBS needsoutput by the program are saved to the ``` ssbm-py/OBS/ ``` directory, and your media in OBS should be linked to these files. Text files are generated for player tags, sponsors, and ports, and images for character icons and team names. Follow the examples below for adding a text and image source to your broadcast. Note the file paths.
 
 ### Example 1
 
