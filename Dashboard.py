@@ -13,6 +13,7 @@ class Dashboard:
         
     def __init__(self, parent):
         self.player_frames = []
+        self.score_frames = []
 
         self.main = ttk.Frame(parent)
         self.main.grid()
@@ -29,17 +30,19 @@ class Dashboard:
         self.score_1 = ScoreCounter(self.score_1_frame)
         self.score_1.set_side(0)
         self.score_1_frame.grid(row = 1, column = 0)
+        self.score_frames.append(self.score_1)
 
         self.hyphen = ttk.Label(self.score_module_frame, text = "-", font = ("Helvetica", 48))
         self.hyphen.grid(row = 1, column = 1)
 
-        self.update_button = ttk.Button(self.score_module_frame, width = 10, text = "UPDATE", command = lambda: update(self.player_frames))
+        self.update_button = ttk.Button(self.score_module_frame, width = 10, text = "UPDATE", command = lambda: update(self))
         self.update_button.grid(row = 2, column = 0, columnspan = 4, rowspan = 3, sticky = S)
 
         self.score_2_frame = ttk.Frame(self.score_module_frame)
         self.score_2 = ScoreCounter(self.score_2_frame)
-        self.score_1.set_side(1)
+        self.score_2.set_side(1)
         self.score_2_frame.grid(row = 1, column = 2)
+        self.score_frames.append(self.score_2)
 
         self.pframe_1 = PlayerFrame(self.char_frame_left)
         self.pframe_1.pframe.grid(row = 0)

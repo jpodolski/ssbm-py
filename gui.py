@@ -28,6 +28,7 @@ from information import *
 import math
 from PlayerFrame import *
 from Dashboard import *
+from SceneSwitch import *
 
 top = Tk() #Define top 
 top.winfo_toplevel().title("miniGIMR")
@@ -48,15 +49,16 @@ nbook.grid()
 
 current_match = Match()
 dashboard = Dashboard(f1)
+scene_swtich = SceneSwitch(f4)
 
 
 def switch():
 	nbook.select(1)
 	
-switchbutton = ttk.Button(f4, text = "switch!", command = lambda: switch())
+switchbutton = ttk.Button(f4, text = "Add/Remove Scenes", command = lambda: switch())
 switchbutton.grid()
 
-html_object = ttk.Label(f3, text = "Settings coming soon. For now, just edit ssbm-py/OBS/tag.css yourself")
+html_object = ttk.Label(f3, text = "Settings coming soon. For now, just edit ssbm-py/templates/tag.css yourself")
 html_object.pack()
 
 top.resizable(0,0)

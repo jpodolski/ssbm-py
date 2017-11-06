@@ -50,8 +50,17 @@ class ScoreCounter:
         self.dec_button.grid(row = 2, column = 0)
 
     """ ACCESSORS """
+    def get_side(self):
+        """ returns __side """
+        return self.__side
+
+    def get_score(self):
+        """ returns __score """
+        return self.__score
+
+    """ MUTATORS """
     def set_side(self, side):
-        """ Returns char as int """
+        """ Setter for __side """
         self.__side = side
 
     """ INTERNAL FUNCTIONS """

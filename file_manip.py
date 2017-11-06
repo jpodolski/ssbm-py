@@ -25,13 +25,23 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 from match import Match
 from PIL import Image, ImageTk
 from information import *
-
 import fileinput
-def write_html_tags(player_frames):
+
+def write_css(player_frames, html_settings = []):
+	alignment = ["right", "left"]
+	for n in range (0,4):
+		with open("templates/tag.css", 'r') as in_file :
+			filedata = in_file.read()
+		filedata = filedata.replace('$ALIGN', alignment[(n+1)%2])
+		with open("OBS/css" + str(n+1) + ".css", 'w') as out_file:
+			out_file.write(filedata)
+
+def write_html_tags(player_frames, html_settings = []):
 	for n in range (0,4):
 		with open("templates/tag.html", 'r') as in_file :
 			filedata = in_file.read()
 		filedata = filedata.replace('$PLAYER', player_frames[n].get_tag())
+		filedata = filedata.replace('$CSS', "css" + str(n+1) + ".css")
 		with open("OBS/p" + str(n+1) + "_tag.html", 'w') as out_file:
 			out_file.write(filedata)
 
@@ -60,8 +70,14 @@ def write_scores(side, score):
 	file.write(str(score))
 	file.close()
 
-def update(player_frames):
-	for n in range (0,4):
-		write_stock_icons(player_frames)
-		write_player_tags(player_frames)
-		write_html_tags(player_frames)
+def write_scene(scene_name):
+	with open("OBS/current_scene.txt", 'w') as out_file:
+		out_file.write(scene_name)
+
+def update(dashboard):
+	write_scores(0, dashboard.score_frames[0].get_score())
+	write_scores(1, dashboard.score_frames[1].get_score())
+	write_stock_icons(dashboard.player_frames)
+	write_player_tags(dashboard.player_frames)
+	write_css(dashboard.player_frames)
+	write_html_tags(dashboard.player_frames)
