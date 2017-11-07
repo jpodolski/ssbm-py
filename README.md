@@ -36,7 +36,7 @@ Then it's already installed. If you don't see anything, then you need python3. Y
 Once you've got python installed, you need to install ssbm-py. Open a terminal in the directory you want the program's main folder to be located in, and type 
 
 ```sh
-git clone https://github.com/jpodolski/ssbm-py.git
+$ git clone https://github.com/jpodolski/ssbm-py.git
 ```
 
 Once everything has downloaded, navigate to the new main folder named ```ssbm-py``` and type
@@ -51,7 +51,7 @@ to get started.
 
 ## Configuring with OBS
 
-All files OBS needsoutput by the program are saved to the ``` ssbm-py/OBS/ ``` directory, and your media in OBS should be linked to these files. Text files are generated for player tags, sponsors, and ports, and images for character icons and team names. Follow the examples below for adding a text and image source to your broadcast. Note the file paths.
+All generated files OBS needs output by the program are saved to the ``` ssbm-py/OBS/ ``` directory, and your media in OBS should be linked to these files. Text files are generated for player tags, sponsors, and ports, and images for character icons and team names. Follow the examples below for adding a text and image source to your broadcast. Note the file paths.
 
 ### Example 1
 
