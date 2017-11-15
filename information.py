@@ -22,6 +22,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
+# All characters that can be played with in SSBM
 character_names = [
 	"Fox",
 	"Falco",
