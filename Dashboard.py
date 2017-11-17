@@ -10,7 +10,7 @@ class Dashboard:
     """
 
     """ INITIALIZATION """
-        
+
     def __init__(self, parent):
         self.player_frames = []
         self.score_frames = []
@@ -68,3 +68,4 @@ class Dashboard:
         self.player_frames.append(self.pframe_2)
         self.player_frames.append(self.pframe_3)
         self.player_frames.append(self.pframe_4)
+

@@ -3,9 +3,9 @@
 ## @file player.py
 ## @author Jeff Podolski
 ## @todo
-#   - Add tabs for settings
-#   - Fix file write stuff
-#   - Fix referencing 
+#   - clean it up, make as compact as possible
+#   - run through pylint
+#   - tkinter -> tk
 
 # ==============================================================================
 """
@@ -19,10 +19,11 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-from tkinter import *
+
+# do we need the whole package?
+# from tkinter import * 
 import tkinter.ttk as ttk
 from file_manip import *
-from match import Match 
 from PIL import Image, ImageTk
 from information import *
 import math

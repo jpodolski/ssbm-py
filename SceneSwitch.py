@@ -9,7 +9,7 @@ class SceneSwitch:
     """
 
     """ INITIALIZATION """
-        
+
     def __init__(self, parent):
         self.main = ttk.Frame(parent)
         self.main.grid()

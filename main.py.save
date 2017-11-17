@@ -1,0 +1,11 @@
+
+a = QApplication(sys.argv)
+w = QWidget()
+
+w.resize(600, 600)
+w.setWindowTitle("SSBM AutoGIMR")
+w.show()
+
+sys.exit(a.exec_())
+
+
