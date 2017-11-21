@@ -1,1 +1,2 @@
 Team Smash Log File: 
+Andrew: getting familiar with layout and output of this project, downloaded pylint, getting familiar with its processes, working towards committing 
