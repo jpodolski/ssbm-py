@@ -1,2 +1,2 @@
 Team Smash Log File: 
-Andrew: getting familiar with layout and output of this project, downloaded pylint, getting familiar with its processes, working towards committing 
+Andrew: getting familiar with layout and output of this project, downloaded pylint, getting familiar with its processes, working towards committing -- have now got pylint fully operational, know how to run it, and am improving pylint scores of files.
