@@ -19,7 +19,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-import ttk as ttk
+import tkinter.ttk as ttk
 from file_manip import write_scores
 
 
