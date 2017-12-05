@@ -28,7 +28,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 
 from player import Player
 
-class Match:
+class Match(object): # pylint: disable=too-few-public-methods
     """
     The Match class is designed to be a basic class that
     holds essential information about a set. And can be modified

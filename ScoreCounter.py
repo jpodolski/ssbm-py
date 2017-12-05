@@ -19,11 +19,11 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-import tkinter.ttk as ttk
+import tkinter.ttk as ttk # pylint: disable=import-error
 from file_manip import write_scores
 
 
-class ScoreCounter(object):
+class ScoreCounter(object): # pylint: disable=too-few-public-methods
     """
     A GUI class that contains the components responsible
     for manipulating one score variable

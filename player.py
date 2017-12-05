@@ -24,7 +24,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 
 from information import *
 
-class Player:
+class Player(object): # pylint: disable=too-few-public-methods
     """
     A class describing a specific player.
     Used by Match, Tournament, and possible future

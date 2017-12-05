@@ -18,13 +18,13 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-from tkinter import ttk
+from tkinter import ttk # pylint: disable=import-error
 from PlayerFrame import PlayerFrame
 from ScoreCounter import ScoreCounter
 from file_manip import update
 
 
-class Dashboard(object):
+class Dashboard(object): # pylint: disable=too-few-public-methods
     """
     A GUI class that contains the components responsible
     for editing one Player item in the InfoTab

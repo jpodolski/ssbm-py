@@ -51,7 +51,5 @@ character_names.append("Ness")
 character_names.append("Bowser")
 character_names.append("Kirby")
 character_names.append("Generic")
-
 ports = ["Player 1", "Player 2", "Player 3", "Player 4"]
-
 char_mod_table = [3, 3, 4, 4, 4, 4, 5, 3, 4, 3, 3, 5, 4, 4, 4, 4, 4, 4, 3, 4, 3, 4, 3, 3, 3, 5, 0]

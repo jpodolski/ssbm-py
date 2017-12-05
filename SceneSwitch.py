@@ -19,10 +19,10 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-import tkinter.ttk as ttk
+import tkinter.ttk as ttk # pylint: disable=import-error
 from file_manip import write_scene
 
-class SceneSwitch(object):
+class SceneSwitch(object): # pylint: disable=too-few-public-methods
     """
     A GUI class for the Scene Switcher tab
     """

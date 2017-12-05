@@ -18,8 +18,8 @@ Github Repo: http://github.com/jpodolski/ssbm-py
 Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
-from tkinter import *
-import tkinter.ttk as ttk
+from tkinter import * # pylint: disable=import-error
+import tkinter.ttk as ttk  # pylint: disable=import-error
 from file_manip import gen_char_filename
 from match import Match
 from PIL import Image, ImageTk
@@ -27,7 +27,7 @@ from information import *
 # import math
 
 
-class PlayerFrame(object):
+class PlayerFrame(object): # pylint: disable=too-few-public-methods
     """
     A GUI class that contains the components responsible
     for editing one Player item in the InfoTab
