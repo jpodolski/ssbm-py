@@ -20,31 +20,30 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 # ==============================================================================
 
 
-# do we need the whole package?
-# from tkinter import * 
 import tkinter.ttk as ttk
-from file_manip import *
+from tkinter import *
 from PIL import Image, ImageTk
-from information import *
-import math
 from PlayerFrame import *
 from Dashboard import *
+from information import *
+from file_manip import *
+
 from SceneSwitch import *
 
-top = Tk() #Define top 
+top = Tk() #Define top
 top.winfo_toplevel().title("miniGIMR")
 
 nbook = ttk.Notebook(top)
-f1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
-f2 = ttk.Frame(nbook)   # second page
-f3 = ttk.Frame(nbook)   # third page
-f4 = ttk.Frame(nbook)   # third page
-f5 = ttk.Frame(nbook)   # third page
-nbook.add(f1, text='Dashboard')
-nbook.add(f2, text='Stream Info')
-nbook.add(f3, text='HTML Output')
-nbook.add(f4, text='Scene Control')
-nbook.add(f5, text='Settings')
+frame_1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
+frame_2 = ttk.Frame(nbook)   # second page
+frame_3 = ttk.Frame(nbook)   # third page
+frame_4 = ttk.Frame(nbook)   # third page
+frame_5 = ttk.Frame(nbook)   # third page
+nbook.add(frame_1, text='Dashboard')
+nbook.add(frame_2, text='Stream Info')
+nbook.add(frame_3, text='HTML Output')
+nbook.add(frame_4, text='Scene Control')
+nbook.add(frame_5, text='Settings')
 
 nbook.grid()
 
@@ -54,8 +53,8 @@ scene_swtich = SceneSwitch(f4)
 
 
 def switch():
-	nbook.select(1)
-	
+        nbook.select(1)
+
 switchbutton = ttk.Button(f4, text = "Add/Remove Scenes", command = lambda: switch())
 switchbutton.grid()
 
