@@ -101,3 +101,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# pylinted
+pylinted
+
+# nano save files
+*.save
+*.save*
