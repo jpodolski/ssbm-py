@@ -34,11 +34,11 @@ top = Tk() #Define top
 top.winfo_toplevel().title("miniGIMR")
 
 nbook = ttk.Notebook(top)
-f1 = ttk.Frame(nbook, borderwidth = 6)   # first page, which would get widgets gridded into it
-f2 = ttk.Frame(nbook)   # second page
-f3 = ttk.Frame(nbook)   # third page
-f4 = ttk.Frame(nbook)   # third page
-f5 = ttk.Frame(nbook)   # third page
+f1 = ttk.Frame(nbook, borderwidth = 6)	# first page, which would get widgets gridded into it
+f2 = ttk.Frame(nbook)   		# second page
+f3 = ttk.Frame(nbook)   		# third page
+f4 = ttk.Frame(nbook)   		# fourth page
+f5 = ttk.Frame(nbook)   		# fifth page
 nbook.add(f1, text='Dashboard')
 nbook.add(f2, text='Stream Info')
 nbook.add(f3, text='HTML Output')
