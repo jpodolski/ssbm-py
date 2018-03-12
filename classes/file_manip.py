@@ -1,5 +1,5 @@
 ## @file file_manip.py @author Jeff Podolski @todo
-#   - Make this work (DONE) - Add real functions (KIND OF DONE) - Add in pickle, 
+#   - Make this work (DONE) - Add real functions (KIND OF DONE) - Add in pickle,
 #   html, json, etc support (UGH)
 
 # ==============================================================================
@@ -9,11 +9,11 @@ FILE_MANIP.PY
 
 Attribution 4.0 International (CC BY 4.0)
 
-All code below is free and open source, intended to better the smash community You 
-are free to copy, modify, and redistribute this code as long as credit is given to 
+All code below is free and open source, intended to better the smash community You
+are free to copy, modify, and redistribute this code as long as credit is given to
 the original author (Jeff Podolski). Check out the source!
 
-Github Repo: http://github.com/jpodolski/ssbm-py Sharing License: 
+Github Repo: http://github.com/jpodolski/ssbm-py Sharing License:
 https://creativecommons.org/licenses/by/4.0/
 
 """
@@ -30,7 +30,7 @@ def write_css():
         with open("templates/tag.css", 'r') as in_file:
             filedata = in_file.read()
         filedata = filedata.replace('$ALIGN', alignment[(i+1)%2])
-        with open("OBS/css" + str(i+1) + ".css", 'w') as out_file:
+        with open("OBS/css/css" + str(i+1) + ".css", 'w') as out_file:
             out_file.write(filedata)
 
 def write_html_tags(player_frames):
@@ -40,45 +40,44 @@ def write_html_tags(player_frames):
             filedata = in_file.read()
         filedata = filedata.replace('$PLAYER', player_frames[i].get_tag())
         filedata = filedata.replace('$CSS', "css" + str(i+1) + ".css")
-        with open("OBS/p" + str(i+1) + "_tag.html", 'w') as out_file:
+        with open("OBS/html/p" + str(i+1) + "_tag.html", 'w') as out_file:
             out_file.write(filedata)
 
 def gen_char_filename(char, sub_color):
-    """ returns a string containing the path for outputting the path to write icons 
-"""
-    return "media/stock/" + str(char) + "_" + str(sub_color) + ".png"
+    """ returns a string containing the path for outputting the path to write icons """
+    return "media/stock/" + str(char-1) + "_" + str(sub_color) + ".png"
 
 def write_stock_icons(player_frames):
     """ writes out stock icons to file defined by gen_char_filename() """
     for i in range(0, 4):
-        filename = gen_char_filename(player_frames[i].get_char(), 
-player_frames[i].get_sub_color())
+        filename = gen_char_filename(player_frames[i].get_char(),
+                                     player_frames[i].get_sub_color())
         stock = Image.open(filename)
-        stock.save("OBS/p" + str(i+1) + "_char.png", "PNG")
+        stock.save("OBS/images/p" + str(i+1) + "_char.png", "PNG")
 
 def write_player_tags(player_frames):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
-        temp_file = open("OBS/p" + str(i+1) + "_tag.txt", "w")
+        temp_file = open("OBS/text/p" + str(i+1) + "_tag.txt", "w")
         temp_file.write(player_frames[i].get_tag())
         temp_file.close()
 
 def write_player_prefixes(match):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
-        temp_file = open("OBS/p" + str(i+1) + "_prefix.txt", "w")
+        temp_file = open("OBS/text/p" + str(i+1) + "_prefix.txt", "w")
         temp_file.write(match.player[i].get_prefix())
         temp_file.close()
 
 def write_scores(side, score):
     """ outputs plain text scores from player_frame data """
-    temp_file = open("OBS/score_" + str(side+1) + ".txt", "w")
+    temp_file = open("OBS/text/score_" + str(side+1) + ".txt", "w")
     temp_file.write(str(score))
     temp_file.close()
 
 def write_scene(scene_name):
     """ outputs plain text scene name for use with OBS Scene Switcher """
-    with open("OBS/current_scene.txt", 'w') as out_file:
+    with open("OBS/text/current_scene.txt", 'w') as out_file:
         out_file.write(scene_name)
 
 def update(dashboard):
