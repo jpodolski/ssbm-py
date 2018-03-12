@@ -30,7 +30,7 @@ def write_css():
         with open("templates/tag.css", 'r') as in_file:
             filedata = in_file.read()
         filedata = filedata.replace('$ALIGN', alignment[(i+1)%2])
-        with open("OBS/css/css" + str(i+1) + ".css", 'w') as out_file:
+        with open("obs/css/css" + str(i+1) + ".css", 'w') as out_file:
             out_file.write(filedata)
 
 def write_html_tags(player_frames):
@@ -40,7 +40,7 @@ def write_html_tags(player_frames):
             filedata = in_file.read()
         filedata = filedata.replace('$PLAYER', player_frames[i].get_tag())
         filedata = filedata.replace('$CSS', "css" + str(i+1) + ".css")
-        with open("OBS/html/p" + str(i+1) + "_tag.html", 'w') as out_file:
+        with open("obs/html/p" + str(i+1) + "_tag.html", 'w') as out_file:
             out_file.write(filedata)
 
 def gen_char_filename(char, sub_color):
@@ -53,31 +53,31 @@ def write_stock_icons(player_frames):
         filename = gen_char_filename(player_frames[i].get_char(),
                                      player_frames[i].get_sub_color())
         stock = Image.open(filename)
-        stock.save("OBS/images/p" + str(i+1) + "_char.png", "PNG")
+        stock.save("obs/images/p" + str(i+1) + "_char.png", "PNG")
 
 def write_player_tags(player_frames):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
-        temp_file = open("OBS/text/p" + str(i+1) + "_tag.txt", "w")
+        temp_file = open("obs/text/p" + str(i+1) + "_tag.txt", "w")
         temp_file.write(player_frames[i].get_tag())
         temp_file.close()
 
 def write_player_prefixes(match):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
-        temp_file = open("OBS/text/p" + str(i+1) + "_prefix.txt", "w")
+        temp_file = open("obs/text/p" + str(i+1) + "_prefix.txt", "w")
         temp_file.write(match.player[i].get_prefix())
         temp_file.close()
 
 def write_scores(side, score):
     """ outputs plain text scores from player_frame data """
-    temp_file = open("OBS/text/score_" + str(side+1) + ".txt", "w")
+    temp_file = open("obs/text/score_" + str(side+1) + ".txt", "w")
     temp_file.write(str(score))
     temp_file.close()
 
 def write_scene(scene_name):
     """ outputs plain text scene name for use with OBS Scene Switcher """
-    with open("OBS/text/current_scene.txt", 'w') as out_file:
+    with open("obs/text/current_scene.txt", 'w') as out_file:
         out_file.write(scene_name)
 
 def update(dashboard):

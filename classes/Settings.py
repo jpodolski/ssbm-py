@@ -1,4 +1,4 @@
-from file_manip import *
+from classes.file_manip import *
 
 class Settings:
 	def __init__(self):

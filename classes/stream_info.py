@@ -20,11 +20,6 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 
 # ==============================================================================
 
-
-from sys import path # pylint: disable=import-error
-sys.path.append('../')
-""" Supports multi-level dir structure for imports """
-
 import tkinter.ttk as ttk # pylint: disable=import-error
 # from file_manip import *
 
@@ -39,8 +34,8 @@ class StreamInfo(object): # pylint: disable=too-few-public-methods
         self.main.grid()
         self.scene_group = ttk.Frame(self.main)
         
-        self.bracket = ttk.Label(self.main, text='TEST')
-        self.testlabel.grid(row=0, column=0)
+        self.bracket_label = ttk.Label(self.main, text='Bracket Link')
+        self.bracket_label.grid(row=0, column=0)
 
         """self.
         """

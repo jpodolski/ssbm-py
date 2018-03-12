@@ -20,8 +20,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 # ==============================================================================
 
 import tkinter.ttk as ttk # pylint: disable=import-error
-from file_manip import write_scores
-
+from classes.file_manip import write_scores
 
 class ScoreCounter(object): # pylint: disable=too-few-public-methods
     """

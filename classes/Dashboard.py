@@ -19,10 +19,9 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 # ==============================================================================
 
 from tkinter import ttk # pylint: disable=import-error
-from PlayerFrame import PlayerFrame
-from ScoreCounter import ScoreCounter
-from file_manip import update
-
+from classes.player_frame import PlayerFrame
+from classes.score_counter import ScoreCounter
+from classes.file_manip import update
 
 class Dashboard(object): # pylint: disable=too-few-public-methods
     """

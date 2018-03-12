@@ -26,13 +26,13 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-from player import Player
+from classes.player import Player
 
 class Match(object): # pylint: disable=too-few-public-methods
     """
     The Match class is designed to be a basic class that
-    holds essential information about a set. And can be modified
-    it contains information on the players in the match
+    holds essential information about a set.
+    It contains information on the players in the match
     in the form of four Player objects, labeled 1-4
     note that regardless of the notation in the code,
     any player can be assigned to any port. Players are accessed

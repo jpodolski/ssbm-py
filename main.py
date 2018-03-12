@@ -19,17 +19,15 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-
 import tkinter.ttk as ttk
 from tkinter import *
 from PIL import Image, ImageTk
-from PlayerFrame import *
-from Dashboard import *
-from StreamInfo import *
+from classes.player_frame import *
+from classes.dashboard import *
+from classes.stream_info import *
 from information import *
-from file_manip import *
-
-from SceneSwitch import *
+from classes.file_manip import *
+from classes.scene_switch import *
 
 top = Tk() #Define top
 top.winfo_toplevel().title("miniGIMR")
