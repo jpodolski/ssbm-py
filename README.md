@@ -69,7 +69,7 @@ Primary authorship and documentation was done by Jeffrey Podolski and is license
 
 If you'd like to support me and my development for the Smash community, I'd really appreciate it! It will help me buy things like Arduinos, Raspberry Pis, and other neat things I can use to develop more of the Smash software I'm working on. For example there's also autoGIMR, a program that can control match reporting and VoD tagging, simply by interpreting a video stream from a capture card. If you're feeling generous, you can donate through PayPal. Thanks!
 
-### [Donate Here!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jeffreypodolski%40gmail%2ecom&lc=US&item_name=Jeff%20Podolski&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
+### [Donate Here!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jeffreypodolski%40gmail%2ecom&lc=US&item_name=supporting%20open%2dsource%20Smash%20software%21&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
 
 ## Legal
 This software is licensed under the
