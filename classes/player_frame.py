@@ -40,9 +40,9 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.__tkport = StringVar()
         self.__tkport.set("Player"+str(self.__player))
         self.__tag = StringVar()
-        self.__tag.set("test")
+        self.__tag.set("Tag")
         self.__prefix = StringVar()
-        self.__prefix.set("")
+        self.__prefix.set("Prefix")
         self.__tkchar = StringVar()
         self.__tkchar.set("Generic")
         self.__char = 27

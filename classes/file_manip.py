@@ -31,7 +31,7 @@ def write_css():
         with open("templates/tag.css", 'r') as in_file:
             filedata = in_file.read()
         filedata = filedata.replace('$ALIGN', alignment[(i+1)%2])
-        with open("obs/css/css" + str(i+1) + ".css", 'w') as out_file:
+        with open("obs/html/css" + str(i+1) + ".css", 'w') as out_file:
             out_file.write(filedata)
 
 def write_html_tags(player_frames):
@@ -63,11 +63,11 @@ def write_player_tags(player_frames):
         temp_file.write(player_frames[i].get_tag())
         temp_file.close()
 
-def write_player_prefixes(match):
+def write_player_prefixes(player_frames):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
         temp_file = open("obs/text/p" + str(i+1) + "_prefix.txt", "w")
-        temp_file.write(match.player[i].get_prefix())
+        temp_file.write(player_frames[i].get_prefix())
         temp_file.close()
 
 def write_scores(side, score):
@@ -91,6 +91,7 @@ def update(dashboard):
     write_scores(1, dashboard.score_frames[1].get_score())
     write_stock_icons(dashboard.player_frames)
     write_player_tags(dashboard.player_frames)
+    write_player_prefixes(dashboard.player_frames)
     write_css() #again, hopefully not broken
     write_html_tags(dashboard.player_frames)
     export_dashboard(dashboard)
