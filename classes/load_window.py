@@ -83,4 +83,14 @@ class LoadMenu(object):
 	def to_clip(self, event=None):
 		self.root.clipboard_clear()
 		self.root.clipboard_append(self.msg)
+
+def start_load_menu():
+	menu2 = LoadMenu()
+	menu2.root.mainloop()
+	return_value2 = menu2.returning
+	menu2.root.quit()
+	menu2.root.destroy()
+	print(return_value2)
+	return return_value2
+
  
