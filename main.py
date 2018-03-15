@@ -28,39 +28,72 @@ from classes.stream_info import *
 from information import *
 from classes.file_manip import *
 from classes.scene_switch import *
+from classes.load_window import *
+from classes.load_session import *
+from classes.settings import *
+#from classes.initialize import *
 
-top = Tk() #Define top
-top.winfo_toplevel().title("miniGIMR")
+class MainWindow(ttk.Frame):
+	def __init__(self, load_file=None):
+		self.load_file = load_file
+		self.returning = None
+		self.root = tkinter.Tk()
+		self.root.title("autoGIMR")
 
-nbook = ttk.Notebook(top)
-f1 = ttk.Frame(nbook, borderwidth = 6)	# first page, which would get widgets gridded into it
-f2 = ttk.Frame(nbook)   		# second page
-f3 = ttk.Frame(nbook)   		# third page
-f4 = ttk.Frame(nbook)   		# fourth page
-f5 = ttk.Frame(nbook)   		# fifth page
-nbook.add(f1, text='Dashboard')
-nbook.add(f2, text='Stream Info')
-nbook.add(f3, text='HTML Output')
-nbook.add(f4, text='Scene Control')
-nbook.add(f5, text='Settings')
+		# self.root.overrideredirect(True)
 
-nbook.grid()
+		self.nbook = ttk.Notebook(self.root)
+		self.construct_ui()
+		if self.load_file[0] == 1:
+			import_dashboard(self.dashboard, "saved/"+self.load_file[1])
 
-current_match = Match()
-dashboard = Dashboard(f1)
-stream_info = StreamInfo(f2)
-scene_swtich = SceneSwitch(f4)
+	def construct_ui(self):
+		self.f1 = ttk.Frame(self.nbook, borderwidth = 6)	# first page, which would get widgets gridded into it
+		self.f2 = ttk.Frame(self.nbook)   		# second page
+		self.f3 = ttk.Frame(self.nbook)   		# third page
+		self.f4 = ttk.Frame(self.nbook)   		# fourth page
+		self.f5 = ttk.Frame(self.nbook)   		# fifth page
+		self.nbook.add(self.f1, text='Dashboard')
+		self.nbook.add(self.f2, text='Stream Info')
+		self.nbook.add(self.f3, text='HTML Output')
+		self.nbook.add(self.f4, text='Scene Control')
+		self.nbook.add(self.f5, text='Settings')
 
+		self.nbook.grid()
 
-def switch():
-        nbook.select(1)
+		self.current_match = Match()
+		self.dashboard = Dashboard(self.f1)
+		self.dashboard.save_name = self.load_file[1]
+		self.stream_info = StreamInfo(self.f2)
+		self.scene_swtich = SceneSwitch(self.f4)
 
-switchbutton = ttk.Button(f4, text = "Add/Remove Scenes", command = lambda: switch())
-switchbutton.grid()
+		def switch():
+			self.nbook.select(1)
 
-html_object = ttk.Label(f3, text = "Settings coming soon. For now, just edit ssbm-py/templates/tag.css yourself")
-html_object.pack()
+		self.switchbutton = ttk.Button(self.f4, text = "Add/Remove Scenes", command = lambda: switch())
+		self.switchbutton.grid()
 
-top.resizable(0,0)
-top.call('wm', 'attributes', '.', '-topmost', '1') #Keep gui on top
-top.mainloop()
+		self.html_object = ttk.Label(self.f3, text = "Settings coming soon. For now, just edit ssbm-py/templates/tag.css yourself")
+		self.html_object.pack()
+
+def start_main_window(status):
+	menu = MainWindow(status)
+	menu.root.mainloop()
+	return_value = menu.returning
+	menu.root.destroy()
+	print(return_value)
+	return menu.returning
+
+def start_load_menu():
+	menu2 = LoadMenu()
+	menu2.root.mainloop()
+	return_value2 = menu2.returning
+	menu2.root.quit()
+	menu2.root.destroy()
+	print(return_value2)
+	return return_value2
+
+# start_load_menu()
+status = start_load_menu()
+if status != 0:
+	start_main_window(status)

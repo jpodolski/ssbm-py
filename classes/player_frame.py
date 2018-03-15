@@ -39,9 +39,13 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.__port = 0
         self.__tkport = StringVar()
         self.__tkport.set("Player"+str(self.__player))
+        self.__tag = StringVar()
+        self.__tag.set("test")
+        self.__prefix = StringVar()
+        self.__prefix.set("")
         self.__tkchar = StringVar()
         self.__tkchar.set("Generic")
-        self.__char = 26
+        self.__char = 27
         self.__sub_color = 0
         self.__image = Image.open("media/stock/26_0.png")
         self.__tkimg = ImageTk.PhotoImage(self.__image)
@@ -57,10 +61,10 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.prefix_label = ttk.Label(self.pframe, text="Prefix:")
         self.prefix_label.grid(row=0, column=2, columnspan=2, sticky='W')
 
-        self.tag = ttk.Entry(self.pframe)
+        self.tag = ttk.Entry(self.pframe, textvariable=self.__tag)
         self.tag.grid(row=0, column=1, columnspan=1)
 
-        self.prefix = ttk.Entry(self.pframe)
+        self.prefix = ttk.Entry(self.pframe, textvariable=self.__prefix)
         self.prefix.grid(row=0, column=4, columnspan=3)
 
         self.port_dropdown = ttk.OptionMenu(self.pframe, self.__tkport, command=lambda _:self.select_port(), *ports)
@@ -81,8 +85,8 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.char_nextcolor.grid(row=1, column=4)
 
     def get_tag(self):
-        """ Returns tag as string """
-        return self.tag.get()
+        """ Returns tag as StringVar() """
+        return self.__tag.get()
 
     def get_char(self):
         """ Returns char as int """
@@ -94,15 +98,38 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
 
     def get_port(self):
         """ Returns port as int (1-4) """
-        return "PLACEHOLDER"
+        return self.__port
 
     def get_prefix(self):
-        """ Returns prefix as string """
-        return "PLACEHOLDER"
+        """ Returns prefix as StringVar() """
+        return self.__prefix
 
     def set_player(self, new_player):
         """ sets __player """
         self.__player = new_player
+
+    def set_char(self, new_char):
+        """ sets __player """
+        self.__char = new_char
+
+    def set_tag(self, new_tag):
+        """ sets __tag """
+        self.__tag.set(new_tag)
+
+    def set_sub_color(self, new_sub_color):
+        """ sets __sub_color """
+        self.__sub_color = new_sub_color
+
+    def set_prefix(self, new_prefix):
+        """ sets __prefix """
+        self.__prefix.set(new_prefix)
+
+    def refresh(self):
+        self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
+        self.__tkimg = ImageTk.PhotoImage(self.__image)
+        self.char_icon.configure(image = self.__tkimg)
+        print(self.__char)
+        print(self.__sub_color)
 
     def align(self):
         """ Arranges modules inside the frame and sets the appropriate Label text """

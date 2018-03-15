@@ -22,6 +22,7 @@ from tkinter import ttk # pylint: disable=import-error
 from classes.player_frame import PlayerFrame
 from classes.score_counter import ScoreCounter
 from classes.file_manip import update
+from classes.load_session import *
 
 class Dashboard(object): # pylint: disable=too-few-public-methods
     """
@@ -32,6 +33,7 @@ class Dashboard(object): # pylint: disable=too-few-public-methods
     def __init__(self, parent):
         self.player_frames = []
         self.score_frames = []
+        self.save_name = None
 
         """
         Main Frame

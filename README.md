@@ -20,7 +20,7 @@
 
 
 ## Setting up the application (Unix)
-
+  
 First things first, you'll need to have python3 installed. You can check if you have python3 installed by typing 
 ```sh
 $ which python3

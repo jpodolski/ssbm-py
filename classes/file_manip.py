@@ -20,6 +20,7 @@ https://creativecommons.org/licenses/by/4.0/
 # ==============================================================================
 
 from PIL import Image
+from classes.load_session import *
 # import fileinput to be added with Pickle implimentation
 
 def write_css():
@@ -80,6 +81,10 @@ def write_scene(scene_name):
     with open("obs/text/current_scene.txt", 'w') as out_file:
         out_file.write(scene_name)
 
+def write_general_text(path, content):
+    with open("obs/text/"+path, 'w') as out_file:
+        out_file.write(content)
+
 def update(dashboard):
     """ calls all the write/output related functions """
     write_scores(0, dashboard.score_frames[0].get_score())
@@ -88,3 +93,4 @@ def update(dashboard):
     write_player_tags(dashboard.player_frames)
     write_css() #again, hopefully not broken
     write_html_tags(dashboard.player_frames)
+    export_dashboard(dashboard)
