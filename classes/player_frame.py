@@ -102,7 +102,7 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
 
     def get_prefix(self):
         """ Returns prefix as StringVar() """
-        return self.__prefix
+        return self.__prefix.get()
 
     def set_player(self, new_player):
         """ sets __player """
@@ -123,6 +123,10 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
     def set_prefix(self, new_prefix):
         """ sets __prefix """
         self.__prefix.set(new_prefix)
+
+    def set_port(self, new_port):
+        """ sets __port """
+        self.__port = new_port
 
     def refresh(self):
         self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
@@ -151,5 +155,11 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.__tkimg = ImageTk.PhotoImage(self.__image)
         self.char_icon.configure(image=self.__tkimg)
 
-
+    def select_port(self):
+        """ Sets __char to string and resets sub color. Updates image as well """
+        self.__port = port_dropdown.index(self.__tkchar.get())
+        self.__sub_color = 0
+        self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
+        self.__tkimg = ImageTk.PhotoImage(self.__image)
+        self.char_icon.configure(image=self.__tkimg)
 

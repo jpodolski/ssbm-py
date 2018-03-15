@@ -1,4 +1,4 @@
-import tkinter
+import tkinter as tk
 import tkinter.ttk as ttk
 from os import listdir
 from os.path import join, isfile
@@ -6,11 +6,11 @@ from os.path import join, isfile
 class LoadMenu(object):
 	def __init__(self, parent=None, returning = 0):
 		self.returning = returning
-		self.root = tkinter.Tk()
+		self.root = tk.Tk()
 		self.root.title("Load Save")
 
 		#self.returning = returning
-		#self.root = tkinter.Toplevel(master=parent)
+		#self.root = tk.Toplevel(master=parent)
 		#self.root.title("Save Manager")
 		#self.root.overrideredirect(True)
 		
@@ -28,7 +28,7 @@ class LoadMenu(object):
 		self.frm_2.pack(padx=4, pady=4)
 
 		self.files = [f for f in listdir('saved') if isfile(join('saved', f))]
-		self.w = tkinter.Listbox(self.frm_2, selectmode = 'SINGLE', height = 5)
+		self.w = tk.Listbox(self.frm_2, selectmode = 'SINGLE', height = 5, width = 55)
 		i = 0
 		for item in self.files:
 			if item != '.DS_Store':
@@ -52,7 +52,9 @@ class LoadMenu(object):
 		self.btn_3['command'] = self.b3_action
 		self.btn_3.pack(side='left')
 
-		self.new_file_name = ttk.Entry(self.frm_2)
+		self.filename_var = tk.StringVar()
+		self.filename_var.set("filename-here")
+		self.new_file_name = ttk.Entry(self.frm_2, textvariable=self.filename_var)
 		self.new_file_name.pack(side='right')
 
 		self.btn_2.bind('<KeyPress-Return>', func=self.b3_action)

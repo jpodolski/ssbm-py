@@ -34,34 +34,34 @@ class StreamInfo(object): # pylint: disable=too-few-public-methods
         self.main.grid()
         self.scene_group = ttk.Frame(self.main)
         
-        self.tournament_label = ttk.Label(self.main, text='Tournament Name')
+        self.tournament_label = ttk.Label(self.scene_group, text='Tournament Name')
         self.tournament_label.grid(row=0, column=0)
-        self.tournament_text = ttk.Entry(self.main)
+        self.tournament_text = ttk.Entry(self.scene_group)
         self.tournament_text.grid(row=0, column=1)
 
-        self.bracket_label = ttk.Label(self.main, text='Bracket Link')
+        self.bracket_label = ttk.Label(self.scene_group, text='Bracket Link')
         self.bracket_label.grid(row=1, column=0)
-        self.bracket_text = ttk.Entry(self.main)
+        self.bracket_text = ttk.Entry(self.scene_group)
         self.bracket_text.grid(row=1, column=1)
 
-        self.round_label = ttk.Label(self.main, text='Match Round')
+        self.round_label = ttk.Label(self.scene_group, text='Match Round')
         self.round_label.grid(row=2, column=0)
-        self.round_text = ttk.Entry(self.main)
+        self.round_text = ttk.Entry(self.scene_group)
         self.round_text.grid(row=2, column=1)
 
-        self.comm1_label = ttk.Label(self.main, text='Commentator 1')
+        self.comm1_label = ttk.Label(self.scene_group, text='Commentator 1')
         self.comm1_label.grid(row=3, column=0)
-        self.comm1_text = ttk.Entry(self.main)
+        self.comm1_text = ttk.Entry(self.scene_group)
         self.comm1_text.grid(row=3, column=1)
 
-        self.comm2_label = ttk.Label(self.main, text='Commentator 2')
+        self.comm2_label = ttk.Label(self.scene_group, text='Commentator 2')
         self.comm2_label.grid(row=4, column=0)
-        self.comm2_text = ttk.Entry(self.main)
+        self.comm2_text = ttk.Entry(self.scene_group)
         self.comm2_text.grid(row=4, column=1)
 
-        self.custom_label = ttk.Entry(self.main)
+        self.custom_label = ttk.Entry(self.scene_group)
         self.custom_label.grid(row=5, column=0)
-        self.custom_add = ttk.Button(self.main, text = "Add Custom Field") 
+        self.custom_add = ttk.Button(self.scene_group, text = "Add Custom Field") 
         self.custom_add.grid(row=5, column=1)
 
 

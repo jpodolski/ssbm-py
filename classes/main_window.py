@@ -5,6 +5,7 @@ from classes.load_session import *
 from classes.match import *
 from classes.stream_info import *
 from classes.scene_switch import *
+from classes.settings_pane import *
 
 class MainWindow(ttk.Frame):
 	def __init__(self, load_file=None):
@@ -29,22 +30,16 @@ class MainWindow(ttk.Frame):
 		self.nbook.add(self.f1, text='Dashboard')
 		self.nbook.add(self.f2, text='Stream Control')
 		self.nbook.add(self.f3, text='HTML Output')
-		self.nbook.add(self.f4, text='Scene Control')
-		self.nbook.add(self.f5, text='Settings')
+		self.nbook.add(self.f4, text='Settings')
 
 		self.nbook.grid()
+		self.nbook.pack_propagate(0)
 
 		self.current_match = Match()
 		self.dashboard = Dashboard(self.f1)
 		self.dashboard.save_name = self.load_file[1]
-		self.stream_info = StreamInfo(self.f2)
-		self.scene_swtich = SceneSwitch(self.f4)
-
-		def switch():
-			self.nbook.select(1)
-
-		self.switchbutton = ttk.Button(self.f4, text = "Add/Remove Scenes", command = lambda: switch())
-		self.switchbutton.grid()
+		self.scene_swtich = SceneSwitch(self.f2)
+		self.stream_info = SettingsPane(self.f4, self.root)
 
 		self.html_object = ttk.Label(self.f3, text = "Settings coming soon. For now, just edit ssbm-py/templates/tag.css yourself")
 		self.html_object.pack()
