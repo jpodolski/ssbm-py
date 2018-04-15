@@ -65,12 +65,6 @@ All generated files OBS needs output by the program are saved to the ``` ssbm-py
 ## Authors
 Primary authorship and documentation was done by Jeffrey Podolski and is licensed under the terms below.
 
-## Donation
-
-If you'd like to support me and my development for the Smash community, I'd really appreciate it! It will help me buy things like Arduinos, Raspberry Pis, and other neat stuff that I can use to develop more of the Smash software I'm working on. For example, I'm also working on a project called *autoGIMR*, a program that can control match reporting and VoD tagging simply by interpreting a video stream from a capture card. If you're feeling generous, you can donate through the PayPal link below, or if not, you can use the software for free!
-
-### [Donate Here!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jeffreypodolski%40gmail%2ecom&lc=US&item_name=supporting%20open%2dsource%20Smash%20software%21&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
-
 ## Legal
 This software is licensed under the
 
