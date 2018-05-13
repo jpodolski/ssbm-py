@@ -8,13 +8,10 @@
   - Automatic Scene Switching
   - Setup Wizard for easy configuration
   - Virtual Webcam management
-  - Integration with autoGIMR (stream automation based on image recognition)
-  - Support for Bracket/Player import using Challonge and Smash.gg's APIs
   - Keeping various player statistics though stat collection/management tools.
   - Autonomous scene switching and overlay control based on fizzi's stat technology or autoGIMR
   - JSON formatted objects and save files for Matches, Tounaments, and Players
   - VoD tools for generating video titles, thumbnails, and timestamps
-  - Plenty more bells 'n' whistles
 
 *NOTE: Please understand that as this is an (relatively) untested work-in-progress, and no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality.*
 
