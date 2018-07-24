@@ -15,6 +15,15 @@
 
 *NOTE: Please understand that as this is an (relatively) untested work-in-progress, and no funcationality or features are guaranteed to work at any point in time. That being said, the master branch **should** almost never recieve an update that breaks any prior functionality.*
 
+## Todo:
+
+ - Warning dialogs for conflicts, +hidable
+ - Autofill and player database implementation
+ - Removable Scene Bubbles
+ - Robust HTML Controls
+ - User-addable info fields
+ - 
+ - 
 
 ## Setting up the application (Unix)
   

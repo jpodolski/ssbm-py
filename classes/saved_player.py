@@ -1,14 +1,12 @@
-## @file player.py
+## @file saved_player.py
 ## @author Jeff Podolski
 ## @todo
-#   - Perhaps add a hash function to give each player a unique ID
-#   - Write a create-from-json-data initializaer
-#   - Make more comprehensive (region, rank, mains, etc)
+#   - everything, right now
 
 # ==============================================================================
 """
 
-PLAYER.PY
+SAVED_PLAYER.PY
 
 Attribution 4.0 International (CC BY 4.0)
 
@@ -22,9 +20,9 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-from information import *
+# from information import *
 
-class Player(object): # pylint: disable=too-few-public-methods
+class StoredPlayer(object): # pylint: disable=too-few-public-methods
     """
     A class describing a specific player.
     Used by Match, Tournament, and possible future
@@ -35,7 +33,6 @@ class Player(object): # pylint: disable=too-few-public-methods
     #  ==============================
     def __init__(self):
         self.__tag = 'player_tag'
-        self.__port = 0
         self.__prefix = 'player_sponsor'
         self.__char = 'Ω'
         self.__sub_color = 0 # Not comparable to team

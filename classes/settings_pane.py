@@ -1,3 +1,11 @@
+#!/usr/bin/python3
+
+## @file settings_pane.py
+## @author Jeff Podolski
+## @todo
+#   - Implement autoload
+#   - Implelent HTML Align
+
 import tkinter as tk
 import tkinter.ttk as ttk
 
@@ -32,6 +40,11 @@ class SettingsPane(object): # pylint: disable=too-few-public-methods
         html_align_label.grid(row=3, column=0)
         html_align_check = ttk.Checkbutton(self.main, command=lambda: self.dummy())
         html_align_check.grid(row=3, column=2)
+
+        clear_all_warnings_label = ttk.Label(self.main, text = "Reset All Warnings")
+        clear_all_warnings_label.grid(row=4, column=0)
+        clear_all_warnings_button = ttk.Button(self.main, command=lambda: self.dummy())
+        clear_all_warnings_button.grid(row=4, column=2)
 
     def testfunction(self):
         if (self.always_on == 0):

@@ -23,10 +23,10 @@ class MainWindow(ttk.Frame):
 
 	def construct_ui(self):
 		self.f1 = ttk.Frame(self.nbook, borderwidth = 6)	# first page, which would get widgets gridded into it
-		self.f2 = ttk.Frame(self.nbook)   		# second page
-		self.f3 = ttk.Frame(self.nbook)   		# third page
-		self.f4 = ttk.Frame(self.nbook)   		# fourth page
-		self.f5 = ttk.Frame(self.nbook)   		# fifth page
+		self.f2 = ttk.Frame(self.nbook)   					# second page
+		self.f3 = ttk.Frame(self.nbook)   					# third page
+		self.f4 = ttk.Frame(self.nbook)   					# fourth page
+		self.f5 = ttk.Frame(self.nbook)   					# fifth page
 		self.nbook.add(self.f1, text='Dashboard')
 		self.nbook.add(self.f2, text='Stream Control')
 		self.nbook.add(self.f3, text='HTML Output')
