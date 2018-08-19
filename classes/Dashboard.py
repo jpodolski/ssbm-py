@@ -35,6 +35,7 @@ class Dashboard(object): # pylint: disable=too-few-public-methods
     def __init__(self, parent):
         self.player_frames = []
         self.score_frames = []
+        self.selected_teams = ["redteam", "greenteam"]
         self.save_name = None
         self.teamA = StringVar()
         self.teamA.set('Red Team') # initial value
@@ -100,13 +101,20 @@ class Dashboard(object): # pylint: disable=too-few-public-methods
         self.player_frames.append(self.pframe_3)
         self.player_frames.append(self.pframe_4)
 
-        self.teamA_dropdown = ttk.OptionMenu(self.char_frame_left,
+        self.teamA_dropdown = ttk.OptionMenu(self.char_frame_right,
                                              self.teamA,
-                                             command=lambda _: self.select_team(self),
+                                             command=lambda _: self.select_team(),
                                              *team_colors)
-        self.teamB_dropdown = ttk.OptionMenu(self.char_frame_right,
+        self.teamB_dropdown = ttk.OptionMenu(self.char_frame_left,
                                              self.teamB,
-                                             command=lambda _: self.select_team(self),
+                                             command=lambda _: self.select_team(),
                                              *team_colors)
         self.teamA_dropdown.grid(row = 2)
         self.teamB_dropdown.grid(row = 2)
+
+    def select_team(self):
+        self.selected_teams[0] = (self.teamA.get().lower().replace(" ", ""))
+        self.selected_teams[1] = (self.teamB.get().lower().replace(" ", ""))
+
+
+

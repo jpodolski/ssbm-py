@@ -56,13 +56,12 @@ def write_stock_icons(player_frames):
         stock = Image.open(filename)
         stock.save("obs/images/p" + str(i+1) + "_char.png", "PNG")
 
-def write_team_image(player_frames):
-    """ writes out stock icons to file defined by gen_char_filename() """
+def write_team_image(dashboard):
+    """ writes out team images selected by the dropdown in dashboard """
     for i in range(0, 2):
-        filename = gen_char_filename(player_frames[i].get_char(),
-                                     player_frames[i].get_sub_color())
+        filename = "media/team_labels/" + dashboard.selected_teams[(i-1)] + ".png" 
         stock = Image.open(filename)
-        stock.save("obs/images/p" + str(i+1) + "_team.png", "PNG")
+        stock.save("obs/images/team" + str(i+1) + ".png", "PNG")
 
 def write_player_tags(player_frames):
     """ outputs plain text tags from player_frame data """
@@ -99,15 +98,7 @@ def update(dashboard):
     write_player_prefixes(dashboard.player_frames)
     write_css() #again, hopefully not broken
     write_html_tags(dashboard.player_frames)
+    write_team_image(dashboard)
     export_dashboard(dashboard)
-
-def self_destruct(self, string):
-    """
-    YOU NEED TO ITERATE THROUGH THE LIST OF BUTTONS
-    MATCH THE TEXT OF STRING IN THE LIST'S LIST
-    AND CALL DELETION SPECIFICALLY
-    THEN MAKE THE DELETE TOGGLE CHANGE ThE LAMBDA FUNCTIONS
-
-    """
 
     
