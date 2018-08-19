@@ -55,4 +55,5 @@ class SettingsPane(object): # pylint: disable=too-few-public-methods
             self.root.call('wm', 'attributes', '.', '-topmost', '0')
 
     def dummy(self):
+        self.main.clear_all_warnings_button.config(bg = "red")
         print("I don't do anything!")

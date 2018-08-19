@@ -49,12 +49,15 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.__sub_color = 0
         self.__image = Image.open("media/stock/26_0.png")
         self.__tkimg = ImageTk.PhotoImage(self.__image)
+        self.__team = "Red Team"
         self.pframe = ttk.LabelFrame(parent, relief="sunken", borderwidth=10)
         self.pframe.configure(text="Player"+str(self.__player))
         self.pframe.grid(row=0, column=self.__player)
         self.tag_label = ttk.Label(self.pframe, text="Tag:")
         self.tag_label.grid(row=0, column=0, sticky='W')
 
+
+        """ Initialize and grid GUI elements """
         self.port_label = ttk.Label(self.pframe, text="Port:")
         self.port_label.grid(row=1, column=5, sticky='W')
 
@@ -84,6 +87,8 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         self.char_nextcolor.config(command=lambda: self.inc_color(1))
         self.char_nextcolor.grid(row=1, column=4)
 
+
+    """ Accessors and Mutators """
     def get_tag(self):
         """ Returns tag as StringVar() """
         return self.__tag.get()
@@ -128,12 +133,13 @@ class PlayerFrame(object): # pylint: disable=too-few-public-methods
         """ sets __port """
         self.__port = new_port
 
+    """ Helper Functions """
     def refresh(self):
         self.__image = Image.open(gen_char_filename(self.__char, self.__sub_color))
         self.__tkimg = ImageTk.PhotoImage(self.__image)
         self.char_icon.configure(image = self.__tkimg)
-        print(self.__char)
-        print(self.__sub_color)
+        # print(self.__char)
+        # print(self.__sub_color)
 
     def align(self):
         """ Arranges modules inside the frame and sets the appropriate Label text """

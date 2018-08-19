@@ -55,6 +55,8 @@ character_names.append("Generic")
 
 ports = ["Player 1", "Player 2", "Player 3", "Player 4"]
 
+team_colors = ["", "Red Team", "Blue Team", "Green Team"]
+
 """ How many costumes does each character have? """
 char_mod_table = [
 	0, 3, 3, 4, 4, 4, 4,
@@ -63,7 +65,9 @@ char_mod_table = [
 	3, 4, 3, 3, 3, 5, 0
 	]
 
-""" a list of esports teams """
+
+
+""" a list of esports teams (currently unused)"""
 teams = ["100thieves",
 		 "adfinem",
 		 "ago",

@@ -18,11 +18,13 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 """
 # ==============================================================================
 
-from tkinter import ttk # pylint: disable=import-error
-from classes.player_frame import PlayerFrame
+from tkinter import * # pylint: disable=import-error
+import tkinter.ttk as ttk  # pylint: disable=import-errorfrom classes.player_frame import PlayerFrame
 from classes.score_counter import ScoreCounter
 from classes.file_manip import update
+from information import *
 from classes.load_session import *
+from classes.player_frame import *
 
 class Dashboard(object): # pylint: disable=too-few-public-methods
     """
@@ -34,6 +36,10 @@ class Dashboard(object): # pylint: disable=too-few-public-methods
         self.player_frames = []
         self.score_frames = []
         self.save_name = None
+        self.teamA = StringVar()
+        self.teamA.set('Red Team') # initial value
+        self.teamB = StringVar()
+        self.teamB.set('Red Team') # initial value
 
         """
         Main Frame
@@ -93,3 +99,14 @@ class Dashboard(object): # pylint: disable=too-few-public-methods
         self.player_frames.append(self.pframe_2)
         self.player_frames.append(self.pframe_3)
         self.player_frames.append(self.pframe_4)
+
+        self.teamA_dropdown = ttk.OptionMenu(self.char_frame_left,
+                                             self.teamA,
+                                             command=lambda _: self.select_team(self),
+                                             *team_colors)
+        self.teamB_dropdown = ttk.OptionMenu(self.char_frame_right,
+                                             self.teamB,
+                                             command=lambda _: self.select_team(self),
+                                             *team_colors)
+        self.teamA_dropdown.grid(row = 2)
+        self.teamB_dropdown.grid(row = 2)

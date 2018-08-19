@@ -56,6 +56,14 @@ def write_stock_icons(player_frames):
         stock = Image.open(filename)
         stock.save("obs/images/p" + str(i+1) + "_char.png", "PNG")
 
+def write_team_image(player_frames):
+    """ writes out stock icons to file defined by gen_char_filename() """
+    for i in range(0, 2):
+        filename = gen_char_filename(player_frames[i].get_char(),
+                                     player_frames[i].get_sub_color())
+        stock = Image.open(filename)
+        stock.save("obs/images/p" + str(i+1) + "_team.png", "PNG")
+
 def write_player_tags(player_frames):
     """ outputs plain text tags from player_frame data """
     for i in range(0, 4):
@@ -76,10 +84,7 @@ def write_scores(side, score):
     temp_file.write(str(score))
     temp_file.close()
 
-def write_scene(scene_name):
-    """ outputs plain text scene name for use with OBS Scene Switcher """
-    with open("obs/text/current_scene.txt", 'w') as out_file:
-        out_file.write(scene_name)
+
 
 def write_general_text(path, content):
     with open("obs/text/"+path, 'w') as out_file:
@@ -95,3 +100,14 @@ def update(dashboard):
     write_css() #again, hopefully not broken
     write_html_tags(dashboard.player_frames)
     export_dashboard(dashboard)
+
+def self_destruct(self, string):
+    """
+    YOU NEED TO ITERATE THROUGH THE LIST OF BUTTONS
+    MATCH THE TEXT OF STRING IN THE LIST'S LIST
+    AND CALL DELETION SPECIFICALLY
+    THEN MAKE THE DELETE TOGGLE CHANGE ThE LAMBDA FUNCTIONS
+
+    """
+
+    
