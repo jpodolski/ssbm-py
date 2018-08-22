@@ -31,7 +31,7 @@ def scene_button_functionality(self, scene_list, scene_name, delete_mode):
             out_file.write(scene_name)
     else:
         for i in range(len(scene_list)):
-            print(scene_list[i][2])
+            # print(scene_list[i][2])
             if(scene_name == scene_list[i][2]):
                 self.scenes[i][0].destroy()
                 self.scenes.pop(i)
@@ -39,10 +39,10 @@ def scene_button_functionality(self, scene_list, scene_name, delete_mode):
 def duplicate_scene_check(display_string, obs_string, scene_list):
     for i in range(len(scene_list)):
         if(scene_list[i][1] == display_string):
-            print("COLLISION ON DISPLAY")
+            print("COLLISION ON DISPLAY NAME " + display_string + " - Cannot add scene")
             return True
         if(scene_list[i][2] == obs_string):
-            print("COLLISION ON ID")
+            print("COLLISION ON ID " + obs_string + " - Cannot add scene")
             return True
     return False
 
@@ -57,7 +57,7 @@ class SceneSwitch(object): # pylint: disable=too-few-public-methods
 
     def __init__(self, parent):
         self.scenes = [] # Please forgive me 
-        self.delete_mode = True #This boolean is the inverse of what it should be
+        self.delete_mode = True # This boolean is the inverse of what it should be. Don't touch it
         self.main = ttk.Frame(parent)
         self.main.grid()
 
@@ -212,21 +212,6 @@ class SceneSwitch(object): # pylint: disable=too-few-public-methods
                 self.warning_label.config(text = "Cannot add a button with existing ID")
         else:
             self.warning_label.config(text = "Delete existing scenes to add more")
-        """ OLD
-                def add_new_scene(self, display_string, obs_string, main):
-        if(len(self.scenes) < 8):
-            user_scene = ttk.Button(self.scene_buttons,
-                                    text=display_string,
-                                    width=15,
-                                    style="BW.TButton",
-                                    command=lambda: write_scene(obs_string))
-            user_scene.grid(row=len(self.scenes)%4, column=int(len(main.scenes)/4))
-            info_pane = [user_scene, display_string, obs_string]
-            self.scenes.append(info_pane)
-            print(self.scenes)
-
-        """
-
 
     """ I don't know why this changes all of the buttons, but it does. I'm not touching it """
     def toggle_delete_mode(self, main):

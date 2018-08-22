@@ -49,5 +49,5 @@ def start_main_window(status):
 	menu.root.mainloop()
 	return_value = menu.returning
 	menu.root.destroy()
-	print(return_value)
+	# print(return_value)
 	return menu.returning

@@ -19,12 +19,13 @@ class SettingsPane(object): # pylint: disable=too-few-public-methods
         self.main = ttk.Frame(parent)
         self.main.grid()
         self.root = root
-        self.always_on = 0;
+        self.always_on = 1;
 
         always_on_label = ttk.Label(self.main, text = "Keep window on top")
         always_on_label.grid(row=0, column=0)
-        always_on_check = ttk.Checkbutton(self.main, command=lambda: self.testfunction())
+        always_on_check = ttk.Checkbutton(self.main, command=lambda: self.testfunction(), onvalue = 1)
         always_on_check.grid(row=0, column=2)
+       #  always_on_check.select()
 
         load_last_label = ttk.Label(self.main, text = "Automatically load last save on startup")
         load_last_label.grid(row=1, column=0)
@@ -56,4 +57,4 @@ class SettingsPane(object): # pylint: disable=too-few-public-methods
 
     def dummy(self):
         self.main.clear_all_warnings_button.config(bg = "red")
-        print("I don't do anything!")
+        print("Dummy function called by " + self)

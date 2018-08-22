@@ -32,7 +32,7 @@ class LoadMenu(object):
 		i = 0
 		for item in self.files:
 			if item != '.DS_Store':
-				print(str(item))
+				# print(str(item))
 				i = i+1
 				self.w.insert('end', item)
 		self.w.pack()
@@ -77,7 +77,7 @@ class LoadMenu(object):
 			self.returning = [0, self.new_file_name.get()]
 			self.root.quit()
 	def nothing(self):
-		print("nothing")
+		print("A dummy function was called by " + self)
 	def close_mod(self):
 		pass
 	def time_out(self):
@@ -92,7 +92,7 @@ def start_load_menu():
 	return_value2 = menu2.returning
 	menu2.root.quit()
 	menu2.root.destroy()
-	print(return_value2)
+	# print(return_value2)
 	return return_value2
 
  

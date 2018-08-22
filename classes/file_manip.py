@@ -9,7 +9,7 @@ FILE_MANIP.PY
 
 Attribution 4.0 International (CC BY 4.0)
 
-All code below is free and open source, intended to better the smash community You
+All code below is free and open source, intended to better the smash community. You
 are free to copy, modify, and redistribute this code as long as credit is given to
 the original author (Jeff Podolski). Check out the source!
 
@@ -68,6 +68,13 @@ def write_player_tags(player_frames):
     for i in range(0, 4):
         temp_file = open("obs/text/p" + str(i+1) + "_tag.txt", "w")
         temp_file.write(player_frames[i].get_tag())
+        temp_file.close()
+
+def write_player_tags_doubles_formatA(player_frames):
+    """ outputs plain text tags from player_frame data into 4 files """
+    for i in range(0, 4):
+        temp_file = open("obs/text/p" + str(i+1) + "_tag.txt", "w")
+        temp_file.write("[P"+player_frames[i].get_port()+"] "+player_frames[i].get_tag())
         temp_file.close()
 
 def write_player_prefixes(player_frames):
