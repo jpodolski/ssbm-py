@@ -21,7 +21,7 @@ Sharing License: https://creativecommons.org/licenses/by/4.0/
 
 import tkinter as tk
 import tkinter.ttk as ttk # pylint: disable=import-error
-# from classes.file_manip import scene_button_functionality
+from classes.file_manip import write_stream_info
 from math import floor
 
 def scene_button_functionality(self, scene_list, scene_name, delete_mode):
@@ -56,6 +56,11 @@ class SceneSwitch(object): # pylint: disable=too-few-public-methods
         self.destroy()
 
     def __init__(self, parent):
+        self.event_info = [["tournament_name",""],
+                           ["bracket_name",""],
+                           ["round_text",""],
+                           ["commentator_A",""],
+                           ["commentator_B",""]]
         self.scenes = [] # Please forgive me 
         self.delete_mode = True # This boolean is the inverse of what it should be. Don't touch it
         self.main = ttk.Frame(parent)
@@ -181,10 +186,16 @@ class SceneSwitch(object): # pylint: disable=too-few-public-methods
         self.comm2_text = ttk.Entry(self.info_pane, textvariable = self.comm2_var)
         self.comm2_text.grid(row=4, column=1, sticky='w')
 
-        self.custom_label = ttk.Entry(self.info_pane)
-        self.custom_label.grid(row=5, column=0, sticky='w')
-        self.custom_add = ttk.Button(self.info_pane, text = "Add Custom Field") 
-        self.custom_add.grid(row=5, column=1, sticky='e')
+        self.custom_add = ttk.Button(self.info_pane, text = "Write Changes", command = lambda: self.update_event_info(self)) 
+        self.custom_add.grid(row=5, column=0, columnspan=3, sticky='e')
+
+    def update_event_info(self, main):
+        self.event_info[0][1] = self.tournament_var
+        self.event_info[1][1] = self.bracket_var
+        self.event_info[2][1] = self.round_var
+        self.event_info[3][1] = self.comm1_var
+        self.event_info[4][1] = self.comm2_var
+        write_stream_info(self.event_info)
 
     def self_destruct(self, main):
         self.destroy()

@@ -70,6 +70,16 @@ def write_player_tags(player_frames):
         temp_file.write(player_frames[i].get_tag())
         temp_file.close()
 
+def write_arbitrary_text(filename, text_string):
+    """ outputs plain text tags from player_frame data """
+    temp_file = open("obs/text/" + filename + ".txt", "w")
+    temp_file.write(text_string)
+    temp_file.close()
+
+def write_stream_info(info_array):
+    for i in range(0,4):
+        write_arbitrary_text(info_array[i][0], info_array[i][1].get())
+
 def write_player_tags_doubles_formatA(player_frames):
     """ outputs plain text tags from player_frame data into 4 files """
     for i in range(0, 4):
@@ -89,8 +99,6 @@ def write_scores(side, score):
     temp_file = open("obs/text/score_" + str(side+1) + ".txt", "w")
     temp_file.write(str(score))
     temp_file.close()
-
-
 
 def write_general_text(path, content):
     with open("obs/text/"+path, 'w') as out_file:
