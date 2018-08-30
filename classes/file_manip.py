@@ -1,6 +1,8 @@
 ## @file file_manip.py @author Jeff Podolski @todo
-#   - Make this work (DONE) - Add real functions (KIND OF DONE) - Add in pickle,
-#   html, json, etc support (UGH)
+#   - [ ] Windows Filesystem Support (!)
+#   - [-] Teams combo output
+#   - [X] Pickle Compression
+#   - [ ] Configure with global "OS" variable
 
 # ==============================================================================
 """
@@ -21,6 +23,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 from PIL import Image
 from classes.load_session import *
+import classes.settings
 # import fileinput to be added with Pickle implimentation
 
 def write_css():
@@ -70,13 +73,22 @@ def write_player_tags(player_frames):
         temp_file.write(player_frames[i].get_tag())
         temp_file.close()
 
+def write_doubles_combotags(player_frames):
+    """ outputs combined team tags from player_frame data and W/L dropdown in dashboard """
+        # NOT FUNCTIONAL. NEEDS WORK
+    for i in range(0, 2):
+        temp_file = open("obs/text/teamA" + str(i+1) + "_tags.txt", "w")
+        temp_file.write(player_frames[i].get_tag())
+        temp_file.close()
+
 def write_arbitrary_text(filename, text_string):
-    """ outputs plain text tags from player_frame data """
+    """ outputs text to a file using arguments for both """
     temp_file = open("obs/text/" + filename + ".txt", "w")
     temp_file.write(text_string)
     temp_file.close()
 
 def write_stream_info(info_array):
+    """ writes the files for info stored in the stream info tab """
     for i in range(0,4):
         write_arbitrary_text(info_array[i][0], info_array[i][1].get())
 
@@ -106,6 +118,7 @@ def write_general_text(path, content):
 
 def update(dashboard):
     """ calls all the write/output related functions """
+    # NEEDS SUPPORT FOR SCENES, SAVE MANAGEMENT, ETC.
     write_scores(0, dashboard.score_frames[0].get_score())
     write_scores(1, dashboard.score_frames[1].get_score())
     write_stock_icons(dashboard.player_frames)
@@ -115,5 +128,3 @@ def update(dashboard):
     write_html_tags(dashboard.player_frames)
     write_team_image(dashboard)
     export_dashboard(dashboard)
-
-    

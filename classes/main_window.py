@@ -43,6 +43,7 @@ class MainWindow(ttk.Frame):
 
 		self.html_object = ttk.Label(self.f3, text = "Settings coming soon. For now, just edit ssbm-py/templates/tag.css yourself")
 		self.html_object.pack()
+		self.html_object.config(anchor="center")
 
 def start_main_window(status):
 	menu = MainWindow(status)

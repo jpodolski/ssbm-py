@@ -1,5 +1,21 @@
 from classes.file_manip import *
 import pickle as pickle
+import sys, platform
+
+# detect OS, set global __OS
+raw_os = sys.platform
+if (raw_os.startswith("linux")):
+    print ("Linux detected")
+    __OS = "linux"
+elif (raw_os.startswith("windows")):
+    print ("Windows detected")
+    __OS = "windows"
+elif (raw_os.startswith("darwin")):
+    print ("OSX detected")
+    __OS = "osx"
+else:
+	__OS = "unrecognized"
+
 
 class Settings:
 	def __init__(self):
