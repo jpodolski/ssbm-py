@@ -87,3 +87,5 @@ class Player(object): # pylint: disable=too-few-public-methods
     def get_team(self):
         """ An accessor for __team """
         return self.__team
+
+

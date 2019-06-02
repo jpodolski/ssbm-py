@@ -21,6 +21,7 @@
  - Autofill and player database implementation
  - Robust HTML Controls
  - Character vs Character Stinger Transitions
+ - 
 
 ## Setting up the application (Unix)
   
