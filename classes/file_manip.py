@@ -89,7 +89,7 @@ def write_arbitrary_text(filename, text_string):
 
 def write_stream_info(info_array):
     """ writes the files for info stored in the stream info tab """
-    for i in range(0,4):
+    for i in range(0,5):
         write_arbitrary_text(info_array[i][0], info_array[i][1].get())
 
 def write_player_tags_doubles_formatA(player_frames):
