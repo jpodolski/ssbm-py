@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -19,6 +20,11 @@ target/
 # pyenv
 .python-version
 
+# don't know why this wasn't added
+/scraps
+/scraps/*
+
+
 # mkdocs documentation
 /site
 /html
@@ -39,3 +45,4 @@ pylinted
 /obs/text/*
 /obs/images/*
 /obs/css/*
+/saved/*
