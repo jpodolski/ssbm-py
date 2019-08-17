@@ -40,9 +40,10 @@ pylinted
 *.save
 *.save*
 
-# generated content
-/obs/html/*
-/obs/text/*
-/obs/images/*
-/obs/css/*
-/saved/*
+# generated content 
+# I broke it because I'm an idiot
+# /obs/html/*
+# /obs/text/*
+# /obs/images/*
+# /obs/css/*
+# /saved/*
