@@ -1,0 +1,15 @@
+div { 
+  color: #FFFFFF;
+  font-family: "Aldo";
+  font-size: 36pt; 
+  text-align: right;
+  text-shadow:
+  /*OUTLINE*/
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  /*OUTLINE*/ 
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 10;
+}
