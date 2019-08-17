@@ -1,4 +1,6 @@
 #!/bin/bash
+# CURRENTLY OSX / BREW ONLY
+# Sorry it's what I test on. It'll get there
 
 echo "Checking for brew installation..."
 if ! [ -x "$(command -v brew)" ]; then
